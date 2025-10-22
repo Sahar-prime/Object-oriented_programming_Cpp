@@ -1,11 +1,11 @@
-#include "Student.h"
+ï»¿#include "Student.h"
 #include <iostream>
 
 void Student::init()
 {
-	std::cout << "Ââåäèòå èìÿ ñòóäåíòà: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
 	std::cin.getline(name, 20);
-	std::cout << "Ââåäèòå îöåíêè ñòóäåíòà (3 îöåíêè): ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾Ñ†ÐµÐ½ÐºÐ¸ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð° (3 Ð¾Ñ†ÐµÐ½ÐºÐ¸): ";
 	for (int i = 0; i < 3; i++)
 	{
 		std::cin >> marks[i];
@@ -14,8 +14,8 @@ void Student::init()
 
 void Student::show()
 {
-	std::cout << "Èìÿ: " << name << std::endl;
-	std::cout << "Îöåíêè: ";
+	std::cout << "Ð˜Ð¼Ñ: " << name << std::endl;
+	std::cout << "ÐžÑ†ÐµÐ½ÐºÐ¸: ";
 	for (int i = 0; i < 3; i++)
 	{
 		std::cout << marks[i] << " ";
