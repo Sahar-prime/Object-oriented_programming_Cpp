@@ -1,4 +1,5 @@
-﻿#include "Student.h"
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include "Student.h"
 #include <iostream>
 
 void Student::init()
@@ -10,6 +11,24 @@ void Student::init()
 	{
 		std::cin >> marks[i];
 	}
+}
+
+void Student::setName(const char* uname)
+{
+	strcpy(name, uname);
+}
+char* Student::getName()
+{
+	return name;
+}
+
+void Student::setMark(int mark, int index)
+{
+	marks[index] = mark;
+}
+int Student::getMark(int index)
+{
+	return marks[index];
 }
 
 void Student::show()

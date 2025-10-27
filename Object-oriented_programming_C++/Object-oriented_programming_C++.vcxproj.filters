@@ -27,12 +27,21 @@
     <ClCompile Include="h_w.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lift.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lift.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -129,11 +129,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="h_w.cpp" />
+    <ClCompile Include="Lift.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="main_2.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Task.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Lift.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Task.h" />
   </ItemGroup>
