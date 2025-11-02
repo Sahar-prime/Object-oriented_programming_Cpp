@@ -7,5 +7,13 @@ class Task
 public:
     void input();
     void print();
+    
+    void setTitle(const char* newTitle);
+    void setDescription(const char* newDescription);
+    void setStatus(bool newStatus);
+
+    const char* getTitle() const;
+    const char* getDescription() const;
+    bool getStatus() const;
 };
 

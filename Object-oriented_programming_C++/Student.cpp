@@ -13,8 +13,63 @@ void Student::init()
 	}
 }
 
+Student::Student()
+{
+	creatStr("NoName");
+	count = 3;
+	marks = new int[count];
+	for (int i = 0; i < count; i++)
+	{
+		marks[i] = 0;
+	}
+}
+Student::Student(const char* uname)
+{
+	creatStr(uname);
+	count = 3;
+	marks = new int[count];
+	for (int i = 0; i < count; i++)
+	{
+		marks[i] = 0;
+	}
+}
+Student::Student(int* umarks, int ucount)
+{
+	creatStr("NoName");
+	count = ucount;
+	marks = new int[ucount];
+	for (int i = 0; i < ucount; i++)
+	{
+		marks[i] = umarks[i];
+	}
+}
+Student::Student(const char* uname, int* umarks, int ucount)
+{
+	creatStr(uname);
+	count = ucount;
+	marks = new int[ucount];
+	for (int i = 0; i < ucount; i++)
+	{
+		marks[i] = umarks[i];
+	}
+};
+Student::~Student() 
+{
+	delete[]name;
+	delete[]marks;
+	std::cout << "Отработал деструктор\n";
+}
+
+void Student::creatStr(const char* uname)
+{
+	name = new char[strlen(uname) + 1];
+	strcpy(name, uname);
+}
+
 void Student::setName(const char* uname)
 {
+	delete[]name;
+	name = new char[strlen(uname) + 1];
 	strcpy(name, uname);
 }
 char* Student::getName()
