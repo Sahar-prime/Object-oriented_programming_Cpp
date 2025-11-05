@@ -13,6 +13,7 @@ void Student::init()
 	}
 }
 
+/*
 Student::Student()
 {
 	creatStr("NoName");
@@ -43,16 +44,32 @@ Student::Student(int* umarks, int ucount)
 		marks[i] = umarks[i];
 	}
 }
+*/
+
+//главный конструктор
 Student::Student(const char* uname, int* umarks, int ucount)
 {
 	creatStr(uname);
-	count = ucount;
-	marks = new int[ucount];
-	for (int i = 0; i < ucount; i++)
+	if (umarks != nullptr)
 	{
-		marks[i] = umarks[i];
+		count = ucount;
 	}
-};
+	else
+	{
+		count = 3;
+	}
+	marks = new int[count];
+	for (int i = 0; i < ucount; i++) 
+	{
+		marks[i] = umarks ? umarks[i] : 3;
+	}
+}
+
+//делегирование конструкторов
+Student::Student() : Student{ "NoName", new int [3] {0,0,0}, 3 } {}
+Student::Student(const char* uname) : Student{ uname, new int [3] {0,0,0}, 3 } {}
+Student::Student(int* umarks, int ucount) : Student{ "NoName", umarks, ucount } {}
+
 Student::~Student() 
 {
 	delete[]name;
