@@ -1,11 +1,11 @@
 ﻿#pragma once
 class Point
 {
-	float x, y, z;
+	float x, y, z;//порядок влияет на заполнение
 public:
-	Point(); // 0 0 0
-	Point(float user);//user user user
-	Point(float ux, float uy, float uz);//ux uy uz
+	Point() : x{ 0 }, y{ 0 }, z{ 0 } {};
+	Point(float user) : x{ user }, y{ user }, z{ user } {};//порядок не влияет на заполение
+	Point(float ux, float uy, float uz): x{ ux }, y{ uy }, z{ uz } {};
 	~Point();//сообщает о своей работе
 
 	void init();

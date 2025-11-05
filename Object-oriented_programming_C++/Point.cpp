@@ -1,7 +1,8 @@
 ﻿#include "Point.h"
 #include <iostream>
 
-Point::Point() 
+/*
+Point::Point()
 {
 	x = 0;
 	y = 0;
@@ -19,6 +20,8 @@ Point::Point(float ux, float uy, float uz)
 	y = uy;
 	z = uz;
 }
+*/
+
 Point::~Point()
 {
 	std::cout << "Отработал деструктор\n" << std::endl;
