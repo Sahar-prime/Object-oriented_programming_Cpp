@@ -13,12 +13,15 @@ int main()
 	user.init();
 	user.show();
 
-	user.setX(20);
-	user.setY(15);
-	user.setZ(10);
+	user.setX(20.7);
+	user.setY(15.43);
+	user.setZ(10.24);
 	user.show();
 
-	Point p1(5);
+	Point p1(2.11);
 	p1.show();
+	
+	Point p2{2.221, 5.32, 3.89};
+	p2.show();
 }
 #endif //MAIN_3
