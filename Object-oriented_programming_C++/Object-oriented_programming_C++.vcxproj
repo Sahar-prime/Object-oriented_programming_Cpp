@@ -133,11 +133,14 @@
     <ClCompile Include="Lift.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_2.cpp" />
+    <ClCompile Include="main_3.cpp" />
+    <ClCompile Include="Point.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Task.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lift.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Task.h" />
   </ItemGroup>
