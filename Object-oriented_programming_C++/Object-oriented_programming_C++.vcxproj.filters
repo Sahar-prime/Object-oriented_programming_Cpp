@@ -57,6 +57,9 @@
     <ClCompile Include="Drob.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Stor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Drob.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
