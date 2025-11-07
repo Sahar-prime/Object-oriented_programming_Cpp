@@ -136,13 +136,16 @@
     <ClCompile Include="main_3.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="String.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Task.cpp" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lift.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="String.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Task.h" />
   </ItemGroup>
