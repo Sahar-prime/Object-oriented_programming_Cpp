@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "Point.h"
+#include "Person.h"
 
 //#define MAIN_3
 
@@ -24,5 +25,17 @@ int main()
 	Point p2{2.221, 5.32, 3.89};
 	p2.show();
 	std::cout << std::endl;
+
+	Person p3;
+	p3.show();
+	Person p4{15};
+	p4.show();
+	Person p5{"TOM"};
+	p5.show();
+	Person p6{ "Jack", 10 };
+	p6.show();
+	Person p7{p6};
+	p7.show();
+
 }
 #endif //MAIN_3

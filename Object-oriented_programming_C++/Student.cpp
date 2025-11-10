@@ -47,34 +47,37 @@ Student::Student(int* umarks, int ucount)
 */
 
 //главный конструктор
-Student::Student(const char* uname, int* umarks, int ucount)
+Student::Student(const char* name, int* marks, int count)
 {
-	creatStr(uname);
-	if (umarks != nullptr)
+	creatStr(name);
+	this->count = count;
+	this->marks = new int[count];
+	for (int i = 0; i < count; i++) 
 	{
-		count = ucount;
+		this->marks[i] = marks[i];
 	}
-	else
-	{
-		count = 3;
-	}
-	marks = new int[count];
-	for (int i = 0; i < ucount; i++) 
-	{
-		marks[i] = umarks ? umarks[i] : 3;
-	}
+	std::cout << "Отработал конструктор: " << this << std::endl;
 }
 
 //делегирование конструкторов
 Student::Student() : Student{ "NoName", new int [3] {0,0,0}, 3 } {}
 Student::Student(const char* uname) : Student{ uname, new int [3] {0,0,0}, 3 } {}
 Student::Student(int* umarks, int ucount) : Student{ "NoName", umarks, ucount } {}
+Student::Student(const Student& s) : name{ new char[strlen(s.name) + 1] }, marks{ new int[s.count] }, count{ s.count }
+{
+	strcpy(name, s.name);
+	// Копирование оценок
+	for (int i = 0; i < count; ++i) {
+		marks[i] = s.marks[i];
+	}
+	std::cout << "Отработал конструктор копирования: " << this << std::endl;
+}
 
 Student::~Student() 
 {
 	delete[]name;
 	delete[]marks;
-	std::cout << "Отработал деструктор\n";
+	std::cout << "Отработал деструктор: " << this << "\n";
 }
 
 void Student::creatStr(const char* uname)

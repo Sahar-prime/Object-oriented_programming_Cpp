@@ -21,16 +21,24 @@ Person::Person(int uage) : age{ uage }
 Person::Person(const char* uname, int uage) :name{ new char[strlen(uname) + 1] }, age{ uage }
 {
 	strcpy(name, uname);
+	std::cout << "Отработал конструктор: " << this << std::endl;
 }//uname uage
 
 //делегирование конструкторов
 Person::Person() : Person{ "NoName", 0 } {};
 Person::Person(const char* uname) : Person{ uname, 0 } {};
 Person::Person(int uage) :Person{ "NoName", uage } {};
+Person::Person(const Person& p) : //Глубокое копирование(динамика)
+	name{ new char[strlen(p.name) + 1] }, age{p.age}
+{
+	strcpy(name, p.name);
+	std::cout << "Отработал конструктор копирования: " << this << std::endl;
+}
 
 Person::~Person()
 {
 	delete[] name;
+	std::cout << "Отработал деструктор: " << this << "\n";
 };
 
 void Person::show()

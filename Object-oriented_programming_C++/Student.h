@@ -16,6 +16,7 @@ public:
 	Student(const char* uname);
 	Student(int* umarks, int ucount);
 	Student(const char* uname, int* umarks, int ucount);
+	Student(const Student& s);
 	
 	//деструктор
 	~Student();

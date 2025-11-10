@@ -16,6 +16,11 @@ public:
 	{
 		std::cout << "Отработал конструктор: " << this << "\n";
 	}
+	Date(const Date& obj) // Поверхностное копирование
+		: day{ obj.day }, month{ obj.month }, year{ obj.year } 
+	{
+		std::cout << "Отработал конструктор копирования: " << this << "\n";
+	}
 
 	Date& setDay(int day)
 	{
@@ -64,16 +69,16 @@ int main()
 
 	Date d{1,1,1999};
 	d.show();
-	/*d.setDay(5);
+	d.setDay(5);
 	d.setMonth(10);
 	d.setYear(1995);
 	d.show();
-	std::cout << d.getDay() << std::endl;*/
+	std::cout << d.getDay() << std::endl;
 
 	Date d2;
 	d2.show();
 
-	Date d3{ d2 };
+	Date d3{ d2 }; //Конструктор копирования
 	d3.show();
 
 	Date d4;
