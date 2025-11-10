@@ -24,7 +24,11 @@ Point::Point(float ux, float uy, float uz)
 
 Point::~Point()
 {
-	std::cout << "Отработал деструктор\n" << std::endl;
+	std::cout << "Отработал деструктор: " << this << "\n";
+}
+Point::Point(float x, float y, float z) : x{ x }, y { y }, z { z } 
+{
+	std::cout << "Отработал конструктор: " << this << "\n";
 }
 
 void Point::init() 
@@ -38,7 +42,7 @@ void Point::init()
 }
 void Point::show()
 {
-	std::cout << "Point:" << x << ", " << y << ", " << z << std::endl;
+	std::cout << "Point:" << this->x << ", " << this->y << ", " << this->z << std::endl;
 }
 
 float Point::getX()
@@ -54,16 +58,18 @@ float Point::getZ()
 	return z;
 }
 
-void Point::setX(float ux)
+Point& Point::setX(float x)
 {
-	x = ux;
+	this->x = x;
+	return *this;
 }
-void Point::setY(float uy)
+Point& Point::setY(float y)
 {
-	y = uy;
-
+	this->y = y;
+	return *this;
 }
-void Point::setZ(float uz)
+Point& Point::setZ(float z)
 {
-	z = uz;
+	this->z = z;
+	return *this;
 }

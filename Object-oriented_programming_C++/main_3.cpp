@@ -23,5 +23,6 @@ int main()
 	
 	Point p2{2.221, 5.32, 3.89};
 	p2.show();
+	std::cout << std::endl;
 }
 #endif //MAIN_3

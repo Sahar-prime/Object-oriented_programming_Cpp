@@ -60,6 +60,9 @@
     <ClCompile Include="Stor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">

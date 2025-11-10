@@ -7,7 +7,7 @@ public:
 	Point() : Point{ 0, 0, 0 } {};
 	//Point(float user) : x{ user }, y{ user }, z{ user } {};//порядок не влияет на заполение
 	Point(float user) : Point{ user, user, user } {};
-	Point(float ux, float uy, float uz): x{ ux }, y{ uy }, z{ uz } {};
+	Point(float x, float y, float z);
 	~Point();//сообщает о своей работе
 
 	void init();
@@ -17,8 +17,8 @@ public:
 	float getY();
 	float getZ();
 
-	void setX(float ux);
-	void setY(float uy);
-	void setZ(float uz);
+	Point& setX(float x);
+	Point& setY(float y);
+	Point& setZ(float z);
 };
 

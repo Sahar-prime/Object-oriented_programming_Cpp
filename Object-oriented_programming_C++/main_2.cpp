@@ -11,32 +11,26 @@ class Date
 
 public:
 	//сеттеры (мутаторы, модификаторы)
-	Date()
+	Date() :Date{ 1,5,1999 } {}
+	Date(int d, int m, int y) : day{ d }, month{ m }, year{y}
 	{
-		day = 1;
-		month = 05;
-		year = 1999;
-		std::cout << "Отработал без параметров";
-	}
-	Date(int d, int m, int y) 
-	{
-		day = d;
-		month = m;
-		year = y;
-		std::cout << "Отработал с параметрами";
+		std::cout << "Отработал конструктор: " << this << "\n";
 	}
 
-	void setDay(int d)
+	Date& setDay(int day)
 	{
-		day = d;
+		this->day = day; //1 - конфликт имён переменных
+		return *this;
 	}
-	void setMonth(int m)
+	Date& setMonth(int month)
 	{
-		month = m;
+		this->month = month;
+		return *this;
 	}
-	void setYear(int y)
+	Date& setYear(int year)
 	{
-		year = y;
+		this->year = year;
+		return *this;
 	}
 	//геттеры (аксессоры, инспекторы)
 	int getDay()
@@ -53,7 +47,13 @@ public:
 	}
 	void show()
 	{
-		std::cout << day << "." << month << "." << year << std::endl;
+		std::cout << this->day << "." << month << "." << year << std::endl;
+	}
+
+	~Date() 
+	{
+		//3 - отладочная информация
+		std::cout << "Отработал деструктор: " << this << "\n";
 	}
 };
 
@@ -64,14 +64,21 @@ int main()
 
 	Date d{1,1,1999};
 	d.show();
-	d.setDay(5);
+	/*d.setDay(5);
 	d.setMonth(10);
 	d.setYear(1995);
 	d.show();
-	std::cout << d.getDay() << std::endl;
+	std::cout << d.getDay() << std::endl;*/
 
 	Date d2;
 	d2.show();
+
+	Date d3{ d2 };
+	d3.show();
+
+	Date d4;
+	d4.setDay(20).setMonth(10).setYear(1954).show(); //2
+	std::cout << std::endl;
 
 	Lift l;
 	l.setDown(1);
