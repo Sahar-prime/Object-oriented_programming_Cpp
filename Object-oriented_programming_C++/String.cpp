@@ -1,32 +1,53 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include "String.h"
 #include <iostream>
 
-String::String() : length(80)
+String::String() : length(80) 
 {
-    str = new char[length + 1]; // +1 ��� �������������� ����
-    str[0] = '\0'; // ������������� ������ ������
+    str = new char[length + 1];
+    for (size_t i = 0; i < length; ++i)
+    {
+        str[i] = '.';
+    }
+    str[length] = '\0';
+    std::cout << "Отработал конструктор: " << this << std::endl;
 }
 
 String::String(size_t size) : length(size)
 {
     str = new char[length + 1];
-    str[0] = '\0';
+    for (size_t i = 0; i < length; ++i)
+    {
+        str[i] = '.';
+    }
+    str[length] = '\0';
+    std::cout << "Отработал конструктор: " << this << std::endl;
 }
 
-String::String(const char* userStr)
+String::String(const char* str) 
 {
-    length = strlen(userStr);
+    length = strlen(str);
+    this->str = new char[length + 1];
+    strcpy(this->str, str);
+    std::cout << "Отработал конструктор: " << this << std::endl;
+}
+
+String::String(const String& s) 
+{
+    length = s.length;
     str = new char[length + 1];
-    strcpy(str, userStr);
+    strcpy(str, s.str);
+    std::cout << "Отработал конструктор: " << this << std::endl;
 }
 
-String::~String()
+String::~String() 
 {
-    delete[] str;
+    delete[] this->str;
+    std::cout << "Отработал конструктор: " << this << std::endl;
 }
 
-void String::print() const 
+String& String::print()
 {
     std::cout << str << std::endl;
+    return *this;
 }

@@ -8,17 +8,19 @@ int main()
 {
 	setlocale(LC_ALL, "");
 
-	Task task;
-	task.input();
-	task.print();
+    Task task1;
+    task1.print();
 
-	task.setTitle("Новое название");
-	task.setDescription("Новое описание задачи");
-	task.setStatus(1);
-	task.print();
+    Task task2("Сделать уборку", "Убрать комнату и вынести мусор", false);
+    task2.print();
 
-	std::cout << "Название: " << task.getTitle() << std::endl;
-	std::cout << "Описание: " << task.getDescription() << std::endl;
-	std::cout << "Статус: " << (task.getStatus() ? "выполнена" : "не выполнена") << std::endl;
+    Task task3 = task2;
+    task3.print();
+
+    task3.setTitle("Сходить в магазин");
+    task3.print();
+
+    task3.setTitle("Купить продукты").setDescription("Молоко, хлеб, яйца").setStatus(true);
+    task3.print();
 }
 #endif //H_W

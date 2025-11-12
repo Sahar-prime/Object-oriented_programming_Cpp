@@ -2,6 +2,35 @@
 #include <iostream>
 #include "Task.h"
 
+Task::Task()
+{
+    strcpy(title, "Без названия");
+    strcpy(description, "Без описания");
+    status = false;
+    std::cout << "Отработал конструктор: " << this << std::endl;
+}
+
+Task::Task(const char* newTitle, const char* newDescription, bool newStatus)
+{
+    strcpy(title, newTitle);
+    strcpy(description, newDescription);
+    status = newStatus;
+    std::cout << "Отработал конструктор: " << this << std::endl;
+}
+
+Task::Task(const Task& other)
+{
+    strcpy(title, other.title);
+    strcpy(description, other.description);
+    status = other.status;
+    std::cout << "Отработал конструктор копирования: " << this << std::endl;
+}
+
+Task::~Task()
+{
+    std::cout << "Отработал конструктор: " << this << std::endl;
+}
+
 void Task::input()
 {
     std::cout << "Введи название: ";
@@ -19,19 +48,22 @@ void Task::print()
     std::cout << "Статус: " << (status ? "выполнена" : "не выполнена") << std::endl << std::endl;
 }
 
-void Task::setTitle(const char* newTitle)
+Task& Task::setTitle(const char* title)
 {
-    strcpy(title, newTitle);
+    strcpy(this->title, title);
+    return *this;
 }
 
-void Task::setDescription(const char* newDescription)
+Task& Task::setDescription(const char* description)
 {
-    strcpy(description, newDescription);
+    strcpy(this->description, description);
+    return *this;
 }
 
-void Task::setStatus(bool newStatus)
+Task& Task::setStatus(bool status) 
 {
-    status = newStatus;
+    this->status = status;
+    return *this;
 }
 
 const char* Task::getTitle() const

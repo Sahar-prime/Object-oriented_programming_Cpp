@@ -1,18 +1,34 @@
 #include "String.h"
+#include <iostream>
 
 //#define TEST
 
 #ifdef TEST
-int main()
+int main() 
 {
-    // Примеры использования конструкторов
-    String defaultString; // Строка длиной 80 символов
+    setlocale(LC_ALL, "");
+    String defaultString;
+    std::cout << "Строка по умолчанию: ";
     defaultString.print();
 
-    String customSizeString(20); // Строка длиной 20 символов
-    customSizeString.print();
+    // Создаём строку с указанием размера
+    String sizedString(10);
+    std::cout << "Строка с размером 10: ";
+    sizedString.print();
 
-    String userString("Hello, World!"); // Строка, инициализированная пользователем
-    userString.print();
+    // Создаём строку
+    String cString("Привет, мир!");
+    cString.print();
+
+    // Создаём копию строки
+    String copiedString = cString;
+    std::cout << "Копия строки: ";
+    copiedString.print();
+
+    // Выводим строку несколько раз по цепочке
+    String t("hello world");
+    t.print().print().print();
+
 }
+
 #endif //TEST
