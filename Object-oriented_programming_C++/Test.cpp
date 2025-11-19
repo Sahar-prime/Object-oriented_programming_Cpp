@@ -1,4 +1,4 @@
-#include "String.h"
+ï»¿#include "String.h"
 #include <iostream>
 
 //#define TEST
@@ -8,24 +8,24 @@ int main()
 {
     setlocale(LC_ALL, "");
     String defaultString;
-    std::cout << "Ñòðîêà ïî óìîë÷àíèþ: ";
+    std::cout << "Ð¡Ñ‚Ñ€Ð¾ÐºÐ° Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ: ";
     defaultString.print();
 
-    // Ñîçäà¸ì ñòðîêó ñ óêàçàíèåì ðàçìåðà
+    // Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ñ ÑƒÐºÐ°Ð·Ð°Ð½Ð¸ÐµÐ¼ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð°
     String sizedString(10);
-    std::cout << "Ñòðîêà ñ ðàçìåðîì 10: ";
+    std::cout << "Ð¡Ñ‚Ñ€Ð¾ÐºÐ° Ñ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð¾Ð¼ 10: ";
     sizedString.print();
 
-    // Ñîçäà¸ì ñòðîêó
-    String cString("Ïðèâåò, ìèð!");
+    // Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ ÑÑ‚Ñ€Ð¾ÐºÑƒ
+    String cString("ÐŸÑ€Ð¸Ð²ÐµÑ‚, Ð¼Ð¸Ñ€!");
     cString.print();
 
-    // Ñîçäà¸ì êîïèþ ñòðîêè
+    // Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ ÐºÐ¾Ð¿Ð¸ÑŽ ÑÑ‚Ñ€Ð¾ÐºÐ¸
     String copiedString = cString;
-    std::cout << "Êîïèÿ ñòðîêè: ";
+    std::cout << "ÐšÐ¾Ð¿Ð¸Ñ ÑÑ‚Ñ€Ð¾ÐºÐ¸: ";
     copiedString.print();
 
-    // Âûâîäèì ñòðîêó íåñêîëüêî ðàç ïî öåïî÷êå
+    // Ð’Ñ‹Ð²Ð¾Ð´Ð¸Ð¼ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð½ÐµÑÐºÐ¾Ð»ÑŒÐºÐ¾ Ñ€Ð°Ð· Ð¿Ð¾ Ñ†ÐµÐ¿Ð¾Ñ‡ÐºÐµ
     String t("hello world");
     t.print().print().print();
 
