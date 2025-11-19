@@ -38,12 +38,14 @@ Array& Array::setElem(int ind, int val)
 	return *this;
 }
 
-void Array::getElem(int ind)
+int Array::getElem(int ind) const
 {
+	return arr[ind];
+	/*
 	if (ind >= 0 && ind < size)
 	{
 		std::cout << "Элемент [" << ind << "]: " << arr[ind] << std::endl;
-	}
+	}*/
 }
 
 Array& Array::randomize(int a, int b)
@@ -100,7 +102,7 @@ Array& Array::sortArr()
 	return *this;
 }
 
-int Array::minElem() 
+int Array::minElem() const
 {
 	int minVal = arr[0];
 	for (int i = 1; i < size; ++i) 
@@ -113,7 +115,7 @@ int Array::minElem()
 	return minVal;
 }
 
-int Array::maxElem() 
+int Array::maxElem() const
 {
 	int maxVal = arr[0];
 	for (int i = 1; i < size; ++i) 
@@ -124,4 +126,9 @@ int Array::maxElem()
 		}
 	}
 	return maxVal;
+}
+
+int Array::getSize()const
+{
+	return size;
 }
