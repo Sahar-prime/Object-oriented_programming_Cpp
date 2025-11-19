@@ -22,7 +22,7 @@ Person::Person(const char* uname, int uage) :name{ new char[strlen(uname) + 1] }
 {
 	strcpy(name, uname);
 	std::cout << "Отработал конструктор: " << this << std::endl;
-}//uname uage
+}
 
 //делегирование конструкторов
 Person::Person() : Person{ "NoName", 0 } {};
