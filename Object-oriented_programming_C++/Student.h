@@ -7,7 +7,7 @@ class Student
 {
 	//Спецификаторы доступа: 
 	//public, private, protected
-	char *name;
+	char *name;//Поле
 	int *marks;
     int count;
 	void creatStr(const char* uname);
