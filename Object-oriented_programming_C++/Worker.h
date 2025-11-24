@@ -1,61 +1,26 @@
 ﻿#pragma once
 class Worker
 {
-
-};
-
-//ПРОТОТИП
-/*
-#include <iostream>
-
-// Определение текущего года для расчета стажа
-const int CURRENT_YEAR = 2025;
-const int MAX_NAME_LENGTH = 50;
-const int MAX_POSITION_LENGTH = 30;
-
-class Worker {
 private:
-    char fullName[MAX_NAME_LENGTH];
-    char position[MAX_POSITION_LENGTH];
-    int startYear;
+    char fullName[100];
+    char position[50];
+    int yearOfEmployment;
     double salary;
 
 public:
-    // Explicit конструктор
-    explicit Worker(const char* name, const char* pos, int year, double sal) {
-        // Копирование строк с использованием strcpy
-        strncpy(fullName, name, MAX_NAME_LENGTH - 1);
-        fullName[MAX_NAME_LENGTH - 1] = '\0'; // Гарантируем завершающий нулевой символ
+    explicit Worker(const char* name, const char* pos, int year, double sal);
 
-        strncpy(position, pos, MAX_POSITION_LENGTH - 1);
-        position[MAX_POSITION_LENGTH - 1] = '\0';
+    // Константные функции-члены
+    const char* getFullName() const;
+    const char* getPosition() const;
+    int getYearOfEmployment() const;
+    double getSalary() const;
 
-        startYear = year;
-        salary = sal;
-    }
+    // Функция для вывода информации о работнике
+    void displayInfo() const;
 
-    // Константная функция для расчета стажа
-    int getExperience() const {
-        return CURRENT_YEAR - startYear;
-    }
-
-    // Константная функция для получения зарплаты
-    double getSalary() const {
-        return salary;
-    }
-
-    // Константная функция для получения должности (возвращаем указатель на строку C-стиля)
-    const char* getPosition() const {
-        return position;
-    }
-
-    // Константная функция для отображения данных о работнике
-    void display() const {
-        std::cout << "ФИО: " << fullName
-            << ", Должность: " << position
-            << ", Год поступления: " << startYear
-            << ", Зарплата: " << salary
-            << ", Стаж: " << getExperience() << " лет" << std::endl;
-    }
+    // Статические функции для работы с массивом объектов Worker
+    static void displayWorkersWithExperience(const Worker workers[], int size, int minYears, int currentYear);
+    static void displayWorkersWithSalary(const Worker workers[], int size, double minSalary);
+    static void displayWorkersByPosition(const Worker workers[], int size, const char* position);
 };
-*/
