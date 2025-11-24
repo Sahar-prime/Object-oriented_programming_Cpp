@@ -1,4 +1,5 @@
-﻿#include "Point_2.h"
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include "Point_2.h"
 #include <iostream>
 
 Point_2::Point_2(): x(0), y(0) {}
@@ -37,4 +38,13 @@ float Point_2::distance(const Point_2& p1, const Point_2& p2)
 float Point_2::lenght() const
 {
     return sqrt(pow(x, 2) + pow(y, 2));
+}
+
+float Point_2::getX() const 
+{
+    return x;
+}
+float Point_2::getY() const
+{
+    return y;
 }

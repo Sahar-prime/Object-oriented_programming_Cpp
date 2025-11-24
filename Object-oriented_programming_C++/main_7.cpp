@@ -18,7 +18,8 @@ int main()
 	p1.init();
 	p1.show();
 	std::cout << std::endl;
-	Point_2 p3{ Point_2::add(p1, p2) };
+	//Point_2 p3{ Point_2::add(p1, p2) };
+	Point_2 p3{ p1 + p2 };
 	p3.show();
 	Point_2 p4{ Point_2::mult(p1, 3.5) };
 	p4.show();
@@ -30,5 +31,19 @@ int main()
 	//p4 = p3 p4+=3 (+ = += -разные операторы)
 	//нельзя поменять количество операндов
 	//Рекомендация - не использовать операторы, которые не очевидны
+
+	Point_2 p5{ -p4}; //(2;-3) -> (-2; 3)
+
+	Point_2 p6{ p1 * 3.5 };
+
+	++p5;
+	p5.show();
+	--p5;
+	p5.show();
+
+	p5++;
+	p5.show();
+	p5++;
+	p5.show();
 }
 #endif //MAIN_7
