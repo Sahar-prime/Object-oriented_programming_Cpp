@@ -1,4 +1,7 @@
 ﻿#pragma once
+
+#include <iostream> 
+
 class Point_2
 {
 	float x, y;
@@ -23,6 +26,15 @@ public:
 	//friend Point_2 operator-(const Point_2& p);
 
 	//friend Point_2 operator*(const Point_2& p1, float value);
+
+	friend bool operator==(const Point_2& p1, const Point_2 p2);
+	friend bool operator!=(const Point_2& p1, const Point_2 p2);
+
+	friend bool operator<(const Point_2& p1, const Point_2& p2);
+	friend bool operator>(const Point_2& p1, const Point_2& p2);
+	friend bool operator<=(const Point_2& p1, const Point_2& p2);
+	friend bool operator>=(const Point_2& p1, const Point_2& p2);
+
 
 	Point_2 operator+(const Point_2& p)
 	{
@@ -68,7 +80,31 @@ public:
 	}
 };
 
-
+inline bool operator==(const Point_2& p1, const Point_2 p2)
+{
+	return p1.x == p2.x and p1.y == p2.y;
+}
+inline bool operator!=(const Point_2& p1, const Point_2 p2)
+{
+	//return (p1.x != p2.x) or (p1.y != p2.y);
+	return !(p1 == p2);
+}
+inline bool operator<(const Point_2& p1, const Point_2& p2) 
+{
+	return p1.lenght() > p2.lenght();
+}
+inline bool operator>(const Point_2& p1, const Point_2& p2) 
+{
+	return p1.lenght() < p2.lenght();
+}
+inline bool operator<=(const Point_2& p1, const Point_2& p2) 
+{
+	return p1.lenght() <= p2.lenght();
+}
+inline bool operator>=(const Point_2& p1, const Point_2& p2) 
+{
+	return p1.lenght() >= p2.lenght();
+}
 
 //Point_2 operator*(const Point_2& p1, float value)
 //{

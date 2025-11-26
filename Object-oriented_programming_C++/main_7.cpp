@@ -7,14 +7,24 @@
 int main() 
 {
 	Point_2 p1, p2{ 5,10 };
-	if (Point_2::isEqual(p1, p2)) 
+	/*if (Point_2::isEqual(p1, p2)) 
 	{
 		std::cout << "Equal\n";
 	}
 	else 
 	{
 		std::cout << "No equal\n";
+	}*/
+
+	if (p1 == p2)
+	{
+		std::cout << "Equal\n";
 	}
+	else
+	{
+		std::cout << "No equal\n";
+	}
+
 	p1.init();
 	p1.show();
 	std::cout << std::endl;
@@ -45,5 +55,16 @@ int main()
 	p5.show();
 	p5++;
 	p5.show();
+
+	Point_2 p7{ 5, 5 };
+	Point_2 p8{ 5, 5 };
+	if (p7 >= p8)
+	{
+		std::cout << "Equal\n";
+	}
+	else
+	{
+		std::cout << "No equal\n";
+	}
 }
 #endif //MAIN_7

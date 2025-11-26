@@ -16,6 +16,13 @@ public:
 	void init();
 	void show()const;
 
+	friend bool operator==(const Drob_2& d1, const Drob_2& d2);
+	friend bool operator!=(const Drob_2& d1, const Drob_2& d2);
+	friend bool operator<=(const Drob_2& d1, const Drob_2& d2);
+	friend bool operator>=(const Drob_2& d1, const Drob_2& d2);
+	friend bool operator<(const Drob_2& d1, const Drob_2& d2);
+	friend bool operator>(const Drob_2& d1, const Drob_2& d2);
+
 	friend Drob_2 operator+(const Drob_2& d1, const Drob_2& d2);
 
 	Drob_2 operator*(const Drob_2& other) const 
@@ -53,21 +60,45 @@ public:
 	};
 };
 
-Drob_2 operator+(const Drob_2& d1, const Drob_2& d2) 
+// Определение дружественных функций операторов сравнения
+inline bool operator==(const Drob_2& d1, const Drob_2& d2)
+{
+	return d1.num / d1.den == d2.num / d2.den;
+}
+inline bool operator!=(const Drob_2& d1, const Drob_2& d2)
+{
+	return d1.num / d1.den != d2.num / d2.den;
+}
+inline bool operator<=(const Drob_2& d1, const Drob_2& d2)
+{
+	return d1.num / d1.den <= d2.num / d2.den;
+}
+inline bool operator>=(const Drob_2& d1, const Drob_2& d2)
+{
+	return d1.num / d1.den >= d2.num / d2.den;
+}
+inline bool operator<(const Drob_2& d1, const Drob_2& d2)
+{
+	return d1.num / d1.den < d2.num / d2.den;
+}
+inline bool operator>(const Drob_2& d1, const Drob_2& d2)
+{
+	return d1.num / d1.den > d2.num / d2.den;
+}
+
+inline Drob_2 operator+(const Drob_2& d1, const Drob_2& d2)
 {
 	float new_numerator = d1.num * d2.den + d2.num * d1.den;
 	float new_denominator = d1.den * d2.den;
 	return Drob_2(new_numerator, new_denominator);
-};
-
-Drob_2 operator-(const Drob_2& d1, const Drob_2& d2) 
+}
+inline Drob_2 operator-(const Drob_2& d1, const Drob_2& d2)
 {
 	float new_numerator = d1.getNum() * d2.getDenom() + d2.getNum() * d1.getDenom();
 	float new_denominator = d1.getDenom() * d2.getDenom();
 	return Drob_2(new_numerator, new_denominator);
 }
-
-Drob_2 operator/(const Drob_2& d1, const Drob_2& d2) {
+inline Drob_2 operator/(const Drob_2& d1, const Drob_2& d2) {
 	float new_numerator = d1.num * d2.den;
 	float new_denominator = d1.den * d2.num;
 	return Drob_2(new_numerator, new_denominator);

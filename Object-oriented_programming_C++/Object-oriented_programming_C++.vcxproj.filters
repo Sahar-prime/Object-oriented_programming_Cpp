@@ -90,6 +90,9 @@
     <ClCompile Include="Drob_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">
