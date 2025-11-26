@@ -29,23 +29,23 @@ public:
 
 	friend bool operator==(const Point_2& p1, const Point_2 p2);
 	friend bool operator!=(const Point_2& p1, const Point_2 p2);
-
 	friend bool operator<(const Point_2& p1, const Point_2& p2);
 	friend bool operator>(const Point_2& p1, const Point_2& p2);
 	friend bool operator<=(const Point_2& p1, const Point_2& p2);
 	friend bool operator>=(const Point_2& p1, const Point_2& p2);
 
+	//istream ostream
+	friend std::ostream& operator<<(std::ostream& out, const Point_2& p);
+	friend std::istream& operator>>(std::istream& in, Point_2& p);
 
 	Point_2 operator+(const Point_2& p)
 	{
 		return Point_2(this->x + p.x, this->y + p.y);
 	}
-
 	Point_2 operator-() 
 	{
 		return Point_2{ -this-> x, -this->y };
 	}
-
 	Point_2 operator*(float value)
 	{
 		return Point_2(x * value, y * value);
@@ -79,6 +79,19 @@ public:
 		return temp;
 	}
 };
+
+inline std::ostream& operator<<(std::ostream& out, const Point_2& p)
+{
+	//cout << p1 << " " << p2 << endl;
+	out << "Point coordinates: ( " << p.x << ", " << p.y << " )";
+	return out;
+}
+inline std::istream& operator>>(std::istream& in, Point_2& p)
+{
+	//cin >> p;
+	in >> p.x >> p.y;
+	return in;
+}
 
 inline bool operator==(const Point_2& p1, const Point_2 p2)
 {

@@ -18,11 +18,11 @@ int main()
 
 	if (p1 == p2)
 	{
-		std::cout << "Equal\n";
+		std::cout << "Yes\n";
 	}
 	else
 	{
-		std::cout << "No equal\n";
+		std::cout << "No\n";
 	}
 
 	p1.init();
@@ -53,18 +53,25 @@ int main()
 
 	p5++;
 	p5.show();
-	p5++;
+	p5--;
 	p5.show();
 
 	Point_2 p7{ 5, 5 };
 	Point_2 p8{ 5, 5 };
 	if (p7 >= p8)
 	{
-		std::cout << "Equal\n";
+		std::cout << "Yes\n";
 	}
 	else
 	{
-		std::cout << "No equal\n";
+		std::cout << "No\n";
 	}
+
+	Point_2 p9{ 121, 212 };
+	std::cout << p9 << std::endl;
+	
+	Point_2 p10;
+	std::cin >> p10;
+	std::cout << p10 << std::endl;
 }
 #endif //MAIN_7

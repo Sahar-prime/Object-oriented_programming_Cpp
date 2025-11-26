@@ -93,6 +93,9 @@
     <ClCompile Include="main_8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Airplane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">
@@ -135,6 +138,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Drob_2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Airplane.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

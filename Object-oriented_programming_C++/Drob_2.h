@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <iostream>
 class Drob_2
 {
 	int num, den;
@@ -34,6 +35,9 @@ public:
 
 	friend Drob_2 operator/(const Drob_2& d1, const Drob_2& d2);
 
+	friend std::ostream& operator<<(std::ostream& out, const Drob_2& d);
+	friend std::istream& operator>>(std::istream& in, Drob_2& d);
+
 	//(++ и --)
 	Drob_2 operator++()
 	{
@@ -59,6 +63,18 @@ public:
 		return temp;
 	};
 };
+
+
+inline std::ostream& operator<<(std::ostream& out, const Drob_2& d) 
+{
+	out  << d.num << "/" << d.den;
+	return out;
+}
+inline std::istream& operator>>(std::istream& in, Drob_2& d)
+{
+	in >> d.num >> d.den;
+	return in;
+}
 
 // Определение дружественных функций операторов сравнения
 inline bool operator==(const Drob_2& d1, const Drob_2& d2)
