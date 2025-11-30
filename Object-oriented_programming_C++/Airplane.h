@@ -1,8 +1,6 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #pragma once
-
 #include <iostream>
-
 class Airplane
 {
     char type[50]; // Тип самолета (массив char)

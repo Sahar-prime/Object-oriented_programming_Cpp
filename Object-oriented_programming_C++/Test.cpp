@@ -29,6 +29,16 @@ int main()
     String t("hello world");
     t.print().print().print();
 
+    String a("FFF"), b("DDD");
+    String c{ a + b };
+    c.print();
+
+    String m("fffds");
+    String s6 = -m;
+    s6.print();
+
+    String s5 = cString * 3;
+    s5.print();
 }
 
 #endif //TEST

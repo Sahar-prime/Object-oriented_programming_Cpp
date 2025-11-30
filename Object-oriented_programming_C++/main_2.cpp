@@ -1,66 +1,8 @@
 ﻿#include <iostream>
 #include "Lift.h"
+#include "Date.h"
 
 //#define MAIN_2
-
-class Date
-{
-	int day;
-	int month;
-	int year;
-
-public:
-	//сеттеры (мутаторы, модификаторы)
-	Date() :Date{ 1,5,1999 } {}
-	Date(int d, int m, int y) : day{ d }, month{ m }, year{y}
-	{
-		std::cout << "Отработал конструктор: " << this << "\n";
-	}
-	Date(const Date& obj) // Поверхностное копирование
-		: day{ obj.day }, month{ obj.month }, year{ obj.year } 
-	{
-		std::cout << "Отработал конструктор копирования: " << this << "\n";
-	}
-
-	Date& setDay(int day)
-	{
-		this->day = day; //1 - конфликт имён переменных
-		return *this;
-	}
-	Date& setMonth(int month)
-	{
-		this->month = month;
-		return *this;
-	}
-	Date& setYear(int year)
-	{
-		this->year = year;
-		return *this;
-	}
-	//геттеры (аксессоры, инспекторы)
-	int getDay()
-	{
-		return day;
-	}
-	int getMonth()
-	{
-		return month;
-	}
-	int getYear()
-	{
-		return year;
-	}
-	void show()
-	{
-		std::cout << this->day << "." << month << "." << year << std::endl;
-	}
-
-	~Date() 
-	{
-		//3 - отладочная информация
-		std::cout << "Отработал деструктор: " << this << "\n";
-	}
-};
 
 #ifdef MAIN_2
 int main() 

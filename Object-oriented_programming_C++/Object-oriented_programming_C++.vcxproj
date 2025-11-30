@@ -131,6 +131,7 @@
     <ClCompile Include="Airplane.cpp" />
     <ClCompile Include="Array.cpp" />
     <ClCompile Include="Book.cpp" />
+    <ClCompile Include="Date.cpp" />
     <ClCompile Include="Drob.cpp" />
     <ClCompile Include="Drob_2.cpp" />
     <ClCompile Include="h_w.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="main_6.cpp" />
     <ClCompile Include="main_7.cpp" />
     <ClCompile Include="main_8.cpp" />
+    <ClCompile Include="Overcoat.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Point_2.cpp" />
@@ -160,9 +162,11 @@
     <ClInclude Include="Airplane.h" />
     <ClInclude Include="Array.h" />
     <ClInclude Include="Book.h" />
+    <ClInclude Include="Date.h" />
     <ClInclude Include="Drob.h" />
     <ClInclude Include="Drob_2.h" />
     <ClInclude Include="Lift.h" />
+    <ClInclude Include="Overcoat.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Point_2.h" />

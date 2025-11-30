@@ -40,7 +40,7 @@ String::String(const String& s)
     std::cout << "Отработал конструктор: " << this << std::endl;
 }
 
-String::~String() 
+String::~String()
 {
     delete[] this->str;
     std::cout << "Отработал конструктор: " << this << std::endl;
