@@ -51,6 +51,18 @@ public:
 		return Point_2(x * value, y * value);
 	}
 
+	Point_2& operator+=(float ux)
+	{
+		x += ux;
+		return *this;
+	}
+	Point_2& operator+=(const Point_2& p)
+	{
+		x += p.x;
+		y += p.y;
+		return *this;
+	}
+
 	Point_2& operator++() 
 	{
 		++x;

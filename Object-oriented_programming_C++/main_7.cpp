@@ -1,11 +1,14 @@
 ﻿#include <iostream>
 #include "Point_2.h"
+#include "Reservoir.h"
 
 //#define MAIN_7
 
 #ifdef MAIN_7
 int main() 
 {
+	setlocale(LC_ALL, "");
+
 	Point_2 p1, p2{ 5,10 };
 	/*if (Point_2::isEqual(p1, p2)) 
 	{
@@ -73,5 +76,13 @@ int main()
 	Point_2 p10;
 	std::cin >> p10;
 	std::cout << p10 << std::endl;
+
+	p5 = p1;
+	std::cout << p5 << std::endl;
+
+	//Reservoir
+	Reservoir r1;
+	Reservoir r2{ "Test", 1, 2, 3 };
+	//r2 = r1;
 }
 #endif //MAIN_7
