@@ -2,9 +2,7 @@
 #include <iostream>
 class Time 
 {
-    int hours;
-    int minutes;
-    int seconds;
+    int hours, minutes, seconds;
 
     void normalize()
     {
