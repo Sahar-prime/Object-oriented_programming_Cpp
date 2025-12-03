@@ -131,6 +131,7 @@
     <ClCompile Include="Airplane.cpp" />
     <ClCompile Include="Array.cpp" />
     <ClCompile Include="Book.cpp" />
+    <ClCompile Include="Complex.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Drob.cpp" />
     <ClCompile Include="Drob_2.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Airplane.h" />
     <ClInclude Include="Array.h" />
     <ClInclude Include="Book.h" />
+    <ClInclude Include="Complex.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Drob.h" />
     <ClInclude Include="Drob_2.h" />
