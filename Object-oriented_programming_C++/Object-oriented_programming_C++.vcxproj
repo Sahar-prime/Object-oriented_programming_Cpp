@@ -146,6 +146,7 @@
     <ClCompile Include="main_6.cpp" />
     <ClCompile Include="main_7.cpp" />
     <ClCompile Include="main_8.cpp" />
+    <ClCompile Include="main_9.cpp" />
     <ClCompile Include="Overcoat.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Point.cpp" />
@@ -156,6 +157,7 @@
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="Time.cpp" />
     <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +177,7 @@
     <ClInclude Include="String.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Task.h" />
+    <ClInclude Include="Time.h" />
     <ClInclude Include="Worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
