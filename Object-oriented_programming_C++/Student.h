@@ -1,6 +1,5 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+﻿#pragma once
 #include <iostream>
-#pragma once
 //struct - все поля открыты(public)
 //class - все поля закрыты(private)
 class Student
@@ -17,6 +16,7 @@ public:
 	Student(int* umarks, int ucount);
 	Student(const char* uname, int* umarks, int ucount);
 	Student(const Student& s);
+	Student(Student&& s)noexcept;
 	
 	//деструктор
 	~Student();
@@ -29,5 +29,8 @@ public:
 	char* getName();
 	void setMark(int mark, int index);
 	int getMark(int index);
+
+	Student& operator=(const Student& other);
+	Student& operator=(Student&& other) noexcept;
 };
 

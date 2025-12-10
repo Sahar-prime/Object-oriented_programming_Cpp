@@ -127,5 +127,7 @@ int main()
 
     a1 = a2; //копр.
     a2 = std::move(a3); //перемещ.
+    std::cout << a1.getElem(5) << std::endl;
+    a1.setElem(4, 2);
 }
 #endif //MAIN_5

@@ -26,6 +26,13 @@ int main()
 	Student d4{n, m, 3};
 	d4.show();
 	d4.setName("John");
-	d4.show();
+	d4.show(); 
+
+	int marks[] = { 5, 4, 3 };
+	Student student1("Иванов Иван", marks, 3);
+	Student student2;
+	student2 = std::move(student1);
+	std::cout << "Состояние student2 после перемещающего присваивания:" << std::endl;
+	student2.show();
 }
 #endif //MAIN

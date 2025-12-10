@@ -72,6 +72,16 @@ Student::Student(const Student& s) : name{ new char[strlen(s.name) + 1] }, marks
 	}
 	std::cout << "Отработал конструктор копирования: " << this << std::endl;
 }
+Student::Student(Student&& s) noexcept
+	: name{ s.name }, marks{ s.marks }, count{ s.count }
+{
+	
+	s.name = nullptr; 
+	s.marks = nullptr;
+	s.count = 0;
+
+	std::cout << "Отработал конструктор перемещения: " << this << std::endl;
+}
 
 Student::~Student() 
 {
@@ -125,4 +135,43 @@ double Student::aver()
 		sum += marks[i];
 	}
 	return sum / 3.0;
+}
+
+Student& Student::operator=(const Student& other)
+{
+	if (this != &other)
+	{
+		delete[]name;
+		delete[]marks;
+		name = new char[strlen(other.name) + 1];
+		marks = new int[other.count];
+		count = other.count;
+		strcpy(name, other.name);
+		for (int i = 0; i < count; i++)
+		{
+			marks[i] = other.marks[i];
+		}
+	}
+	return *this;
+}
+Student& Student::operator=(Student&& other) noexcept
+{
+	if (this == &other)
+	{
+		return *this;
+	}
+
+	delete[] name;
+	delete[] marks;
+
+	name = other.name;
+	marks = other.marks;
+	count = other.count;
+
+	other.name = nullptr;
+	other.marks = nullptr;
+	other.count = 0;
+
+	std::cout << "Отработал оператор перемещения: " << this << std::endl;
+	return *this;
 }

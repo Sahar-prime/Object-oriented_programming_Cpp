@@ -29,7 +29,7 @@ Array::Array(const Array& a) : size{ a.size }, arr{ new int[a.size] }
 	std::cout << "Отработал конструктор копий: " << this << std::endl;
 }
 
-Array::Array(Array&& a) : size{ a.size }, arr{ a.arr }
+Array::Array(Array&& a)noexcept : size{ a.size }, arr{ a.arr }
 {
 	a.arr = nullptr;
 	a.size = 0;

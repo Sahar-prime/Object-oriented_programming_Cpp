@@ -8,7 +8,7 @@ public:
 	Array();
 	Array(int size);
 	Array(const Array& a); //Глубокое копирование
-    Array(Array&& a);
+    Array(Array&& a)noexcept;
 	Array& setElem(int ind, int val);
 	int getElem(int ind) const;
 	Array& randomize(int a, int b);
@@ -20,6 +20,16 @@ public:
 	int minElem() const;
 	int maxElem() const;
 	int getSize()const;
+
+    int operator[](int ind)const //get
+    {
+        return arr[ind];
+    }
+
+    int& operator[](int ind) //set
+    {
+        return arr[ind];
+    }
 
     // Оператор + (склеить 2 массива)
     Array operator+(const Array& other) const 
