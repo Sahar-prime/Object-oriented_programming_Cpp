@@ -8,6 +8,7 @@ public:
 	Array();
 	Array(int size);
 	Array(const Array& a); //Глубокое копирование
+    Array(Array&& a);
 	Array& setElem(int ind, int val);
 	int getElem(int ind) const;
 	Array& randomize(int a, int b);
@@ -160,17 +161,36 @@ public:
     // Оператор = (присваивание)
     Array& operator=(const Array& other) 
     {
-        if (this != &other)
+        if (this != &other) 
         {
-            delete[] arr;
-            size = other.size;
-            arr = new int[size];
-            for (int i = 0; i < size; ++i) 
-            {
+            delete[]arr;
+            arr = new int[other.size];
+            for (int i = 0; i < other.size; i++)
+            { 
                 arr[i] = other.arr[i];
             }
+            size = other.size;
         }
         return *this;
+    }
+    Array& operator=(Array&& other) noexcept
+    {
+        if (this != &other)
+        {
+            delete[] arr;  // Освобождаем текущие ресурсы
+            arr = other.arr;
+            size = other.size;
+            other.arr = nullptr;  // Обнуляем указатель в исходном объекте
+            other.size = 0;
+        }
+        return *this;
+        //переделать operator= так, чтобы он работал как Array(Array&& a)
+        /*Array::Array(Array&& a) : size{ a.size }, arr{ a.arr }
+        {
+            a.arr = nullptr;
+            a.size = 0;
+            std::cout << "Отработал конструктор перемещения: " << this << std::endl;
+        }*/
     }
 
     // Операторы >> и << (ввод/вывод)
@@ -190,8 +210,5 @@ public:
         }
         return is;
     }
-
-	//***
-	//+= *= (дописывает)
 };
 

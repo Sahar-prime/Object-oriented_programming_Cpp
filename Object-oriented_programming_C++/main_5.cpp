@@ -115,5 +115,17 @@ int main()
     std::cout << uuu << std::endl;
     jjj = uuu;
     std::cout << jjj << std::endl;
+
+    Array a1{ 10 };
+    a1.randomize(0, 9).print();
+    Array a2{ a1 }; //копия
+    a1.print();
+    a2.print();
+    Array a3{ std::move(a2) }; //переместить
+    a2.print();
+    a3.print();
+
+    a1 = a2; //копр.
+    a2 = std::move(a3); //перемещ.
 }
 #endif //MAIN_5

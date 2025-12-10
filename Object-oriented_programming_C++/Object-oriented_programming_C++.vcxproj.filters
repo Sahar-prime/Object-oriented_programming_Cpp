@@ -117,6 +117,9 @@
     <ClCompile Include="h_w_4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main_10.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">

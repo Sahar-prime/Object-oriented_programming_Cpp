@@ -142,6 +142,7 @@
     <ClCompile Include="h_w_4.cpp" />
     <ClCompile Include="Lift.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="main_10.cpp" />
     <ClCompile Include="main_2.cpp" />
     <ClCompile Include="main_3.cpp" />
     <ClCompile Include="main_4.cpp" />

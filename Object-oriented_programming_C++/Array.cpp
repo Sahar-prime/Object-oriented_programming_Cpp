@@ -29,6 +29,13 @@ Array::Array(const Array& a) : size{ a.size }, arr{ new int[a.size] }
 	std::cout << "Отработал конструктор копий: " << this << std::endl;
 }
 
+Array::Array(Array&& a) : size{ a.size }, arr{ a.arr }
+{
+	a.arr = nullptr;
+	a.size = 0;
+	std::cout << "Отработал конструктор перемещения: " << this << std::endl;
+}
+
 Array& Array::setElem(int ind, int val)
 {
 	if (ind >= 0 && ind < size) 
