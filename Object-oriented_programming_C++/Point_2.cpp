@@ -5,6 +5,13 @@
 Point_2::Point_2(): x(0), y(0) {}
 Point_2::Point_2(float x, float y) : x(x), y(y) {}
 
+Point_2::Point_2(const Point_2& p) : x(p.x), y(p.y) {}
+Point_2::Point_2(Point_2&& p) noexcept : x(p.x), y(p.y)
+{
+    p.x = 0;
+    p.y = 0;
+}
+
 void Point_2::init() 
 {
     std::cout << "Enter x: ";

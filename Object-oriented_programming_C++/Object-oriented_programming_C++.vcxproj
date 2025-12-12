@@ -132,6 +132,7 @@
     <ClCompile Include="Array.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Company.cpp" />
     <ClCompile Include="Complex.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Drob.cpp" />
@@ -156,6 +157,7 @@
     <ClCompile Include="Person_2.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Point_2.cpp" />
+    <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Reservoir.cpp" />
     <ClCompile Include="Stor.cpp" />
     <ClCompile Include="String.cpp" />
@@ -170,6 +172,7 @@
     <ClInclude Include="Array.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="Company.h" />
     <ClInclude Include="Complex.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Drob.h" />
@@ -180,6 +183,7 @@
     <ClInclude Include="Person_2.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Point_2.h" />
+    <ClInclude Include="Rect.h" />
     <ClInclude Include="Reservoir.h" />
     <ClInclude Include="Stor.h" />
     <ClInclude Include="String.h" />

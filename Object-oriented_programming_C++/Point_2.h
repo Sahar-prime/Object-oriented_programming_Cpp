@@ -1,13 +1,13 @@
 ﻿#pragma once
-
 #include <iostream> 
-
 class Point_2
 {
 	float x, y;
 public:
 	Point_2();
 	Point_2(float x, float y);
+	Point_2(const Point_2& p);
+	Point_2(Point_2&& p)noexcept;
 	void init();
 	void show()const;
 	static bool isEqual(const Point_2& p1, const Point_2& p2);
@@ -160,4 +160,3 @@ inline bool operator>=(const Point_2& p1, const Point_2& p2)
 //{
 //	return Point_2(p1.x + p2.x, p1.y + p2.y);
 //}
-
