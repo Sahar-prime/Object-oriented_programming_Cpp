@@ -153,6 +153,7 @@
     <ClCompile Include="main_9.cpp" />
     <ClCompile Include="Overcoat.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Person_2.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Point_2.cpp" />
     <ClCompile Include="Reservoir.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Lift.h" />
     <ClInclude Include="Overcoat.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Person_2.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Point_2.h" />
     <ClInclude Include="Reservoir.h" />

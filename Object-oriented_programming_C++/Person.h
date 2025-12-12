@@ -10,6 +10,7 @@ public:
 	Person(int uage);
 	Person(const char* uname, int uage);
 	Person(const Person& p);
+	Person(Person&& p)noexcept;
 	~Person();
 
 	void show();

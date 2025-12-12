@@ -37,5 +37,9 @@ int main()
 	Person p7{p6};
 	p7.show();
 
+	Person p8_1("Jane", 31);
+	Person p8_0{std::move(p8_1)};
+	p8_0.show();
+
 }
 #endif //MAIN_3

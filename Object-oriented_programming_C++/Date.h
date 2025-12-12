@@ -12,6 +12,7 @@ public:
 	Date();
 	Date(int d, int m, int y);
 	Date(const Date& obj);
+	Date(Date&& obj)noexcept;
 	Date& setDay(int day);
 	Date& setMonth(int month);
 	Date& setYear(int year);
@@ -31,6 +32,20 @@ public:
 		}
 		return *this;
 	}
+	Date& operator=(Date&& other) noexcept
+	{
+		if (this != &other) 
+		{
+			day = other.day;
+			month = other.month;
+			year = other.year;
+			other.day = 0;
+			other.month = 0;
+			other.year = 0;
+		}
+		return *this;
+	}
+
 	Date& operator+=(int days)
 	{
 		day += days;

@@ -1,6 +1,7 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "Person.h"
+#include "Date.h"
 
 /*
 Person::Person() : name{ new char[strlen("NoName") + 1] }, age{ 0 }
@@ -28,11 +29,20 @@ Person::Person(const char* uname, int uage) :name{ new char[strlen(uname) + 1] }
 Person::Person() : Person{ "NoName", 0 } {};
 Person::Person(const char* uname) : Person{ uname, 0 } {};
 Person::Person(int uage) :Person{ "NoName", uage } {};
+
 Person::Person(const Person& p) : //Глубокое копирование(динамика)
 	name{ new char[strlen(p.name) + 1] }, age{p.age}
 {
 	strcpy(name, p.name);
 	std::cout << "Отработал конструктор копирования: " << this << std::endl;
+}
+Person::Person(Person&& p)noexcept :
+	name{ new char[strlen(p.name) + 1] }, age{ p.age }
+{
+	strcpy(name, p.name);
+	p.name = nullptr;
+	p.age = 0;
+	std::cout << "Отработал конструктор перемещения: " << this << std::endl;
 }
 
 Person::~Person()

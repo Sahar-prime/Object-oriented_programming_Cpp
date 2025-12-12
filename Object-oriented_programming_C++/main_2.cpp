@@ -41,5 +41,10 @@ int main()
 
 	std::cout << "Текущее состояние лифта: " << (l.getOn_Off() ? "работает" : "не работает") << std::endl;
 	std::cout << "Текущий этаж: " << l.getCurrent() << std::endl;
+
+	Date d5_0, d5_1{ 1, 5, 2005 };
+	d5_0 = std::move(d5_1);
+	std::cout << d5_0 << std::endl;
+
 }
 #endif //MAIN_2
