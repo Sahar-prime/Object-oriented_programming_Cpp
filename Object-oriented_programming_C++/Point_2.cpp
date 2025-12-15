@@ -2,7 +2,7 @@
 #include "Point_2.h"
 #include <iostream>
 
-Point_2::Point_2(): x(0), y(0) {}
+Point_2::Point_2(int x, int y): x(x), y(y) {}
 Point_2::Point_2(float x, float y) : x(x), y(y) {}
 
 Point_2::Point_2(const Point_2& p) : x(p.x), y(p.y) {}

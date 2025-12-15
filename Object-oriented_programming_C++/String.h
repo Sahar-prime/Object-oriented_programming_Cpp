@@ -25,6 +25,28 @@ public:
     // Метод для вывода строки (для проверки)
     String& print();
 
+    String& operator=(const String& s)
+    {
+        if (this == &s) return *this;
+        delete[] str;
+        length = s.length;
+        str = new char[length + 1];
+        strcpy(str, s.str);
+
+        return *this;
+    }
+    String& operator=(String&& s) noexcept
+    {
+        if (this == &s) return *this;
+        delete[] str;
+        str = s.str;
+        length = s.length;
+        s.str = nullptr; 
+        s.length = 0;
+
+        return *this;
+    }
+
     friend String operator+(const String& left, const String& right);
     friend String operator*(const String& s, unsigned int multiplier);
     friend String operator-(const String& s);

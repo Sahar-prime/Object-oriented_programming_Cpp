@@ -4,7 +4,7 @@ class Point_2
 {
 	float x, y;
 public:
-	Point_2();
+	Point_2(int x = 0, int y = 0);
 	Point_2(float x, float y);
 	Point_2(const Point_2& p);
 	Point_2(Point_2&& p)noexcept;
