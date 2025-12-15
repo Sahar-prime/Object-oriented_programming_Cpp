@@ -16,8 +16,10 @@ Rect::Rect(Rect&& r) noexcept: start(std::move(r.start)), a(r.a), b(r.b)
 void Rect::init() 
 {
     start.init();
-    a = 23;
-    b = 55;
+    std::cout << "Введите ширину: ";
+    std::cin >> a;
+    std::cout << "Введите высоту: ";
+    std::cin >> b;
 }
 
 void Rect::show() 
