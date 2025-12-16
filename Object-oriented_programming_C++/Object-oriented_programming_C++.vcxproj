@@ -144,6 +144,7 @@
     <ClCompile Include="Lift.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_10.cpp" />
+    <ClCompile Include="main_11.cpp" />
     <ClCompile Include="main_2.cpp" />
     <ClCompile Include="main_3.cpp" />
     <ClCompile Include="main_4.cpp" />
@@ -152,6 +153,8 @@
     <ClCompile Include="main_7.cpp" />
     <ClCompile Include="main_8.cpp" />
     <ClCompile Include="main_9.cpp" />
+    <ClCompile Include="MedalRow.cpp" />
+    <ClCompile Include="MedalTable.cpp" />
     <ClCompile Include="Overcoat.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Person_2.cpp" />
@@ -178,6 +181,8 @@
     <ClInclude Include="Drob.h" />
     <ClInclude Include="Drob_2.h" />
     <ClInclude Include="Lift.h" />
+    <ClInclude Include="MedalRow.h" />
+    <ClInclude Include="MedalTable.h" />
     <ClInclude Include="Overcoat.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Person_2.h" />
