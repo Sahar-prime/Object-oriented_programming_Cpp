@@ -138,6 +138,7 @@
     <ClCompile Include="Drob.cpp" />
     <ClCompile Include="Drob_2.cpp" />
     <ClCompile Include="DynArray.cpp" />
+    <ClCompile Include="DynArray_2d.cpp" />
     <ClCompile Include="h_w.cpp" />
     <ClCompile Include="h_w_2.cpp" />
     <ClCompile Include="h_w_3.cpp" />
@@ -146,7 +147,7 @@
     <ClCompile Include="Student implementation.cpp" />
     <ClCompile Include="Array implementation_2.cpp" />
     <ClCompile Include="MedalRow and MedalTable implementation.cpp" />
-    <ClCompile Include="DynArray implementation.cpp" />
+    <ClCompile Include="DynArray and DynArray_2d implementation.cpp" />
     <ClCompile Include="Lift and Date implementation.cpp" />
     <ClCompile Include="Point and Person implementation.cpp" />
     <ClCompile Include="Drob and Stor implementation.cpp" />
@@ -175,6 +176,7 @@
   <ItemGroup>
     <ClInclude Include="Airplane.h" />
     <ClInclude Include="Array.h" />
+    <ClInclude Include="DynArray_2d.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Company.h" />

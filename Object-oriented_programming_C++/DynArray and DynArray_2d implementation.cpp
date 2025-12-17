@@ -1,5 +1,6 @@
 #include <iostream>
 #include "DynArray.h"
+#include "DynArray_2d.h"
 
 //#define MAIN
 
@@ -28,7 +29,7 @@ public:
 };
 
 #ifdef MAIN
-int main() 
+int main()
 {
 	setlocale(LC_ALL, "");
 
@@ -49,5 +50,16 @@ int main()
 	DynArray d_Arr(5, 3);
 	d_Arr.randomize();
 	d_Arr.print();
+
+	//DynArray_2d
+	DynArray_2d array(3, 3);
+	std::cout << "Введите элементы массива 3x3 (построчно):" << std::endl;
+	array.init();
+	std::cout << "\nВывод массива:" << std::endl;
+	array.print();
+	array(1, 1) = 9;
+	std::cout << "\nМассив после изменения элемента [1][1] на 9:" << std::endl;
+	array.print();
+	std::cout << "\nЗначение элемента [0][1]: " << array(0, 1) << std::endl;
 }
 #endif //MAIN

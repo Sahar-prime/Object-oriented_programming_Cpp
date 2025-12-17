@@ -25,4 +25,3 @@ public:
 
 	void print() const; // вывод страны и их медали
 };
-

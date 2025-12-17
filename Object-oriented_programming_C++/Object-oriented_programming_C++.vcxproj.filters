@@ -138,10 +138,13 @@
     <ClCompile Include="MedalTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DynArray implementation.cpp">
+    <ClCompile Include="DynArray and DynArray_2d implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DynArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynArray_2d.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -222,6 +225,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DynArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DynArray_2d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

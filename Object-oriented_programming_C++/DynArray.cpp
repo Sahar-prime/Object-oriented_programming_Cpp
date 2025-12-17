@@ -1,4 +1,4 @@
-#include "DynArray.h"
+﻿#include "DynArray.h"
 #include <iostream>
 
 //DynArray::DynArray(int row, int col) : 

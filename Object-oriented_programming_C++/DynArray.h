@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 class DynArray 
 {
@@ -10,7 +10,7 @@ public:
 	void randomize();
 	void print()const;
 
-	//перегрузить двумя способами (как [])
+	//РїРµСЂРµРіСЂСѓР·РёС‚СЊ РґРІСѓРјСЏ СЃРїРѕСЃРѕР±Р°РјРё (РєР°Рє [])
 	int operator()(int row, int col) const;
 	int& operator()(int row, int col);
 };
