@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include "Array.h"
 
-//#define MAIN_10
+//#define MAIN
 
 //void test(int& a, int b) 
 //{
@@ -16,7 +16,7 @@ int max(int a, int b)
 	return a > b ? a : b;
 }
 
-#ifdef MAIN_10
+#ifdef MAIN
 int main() 
 {
 	setlocale(LC_ALL, "");
@@ -61,4 +61,4 @@ int main()
 	std::cout << refX << " " << &refX << std::endl;
 	std::cout << refXX << " " << &refXX << std::endl;*/
 }
-#endif //MAIN_10
+#endif //MAIN

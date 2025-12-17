@@ -2,9 +2,9 @@
 #include "Point_2.h"
 #include "Reservoir.h"
 
-//#define MAIN_7
+//#define MAIN
 
-#ifdef MAIN_7
+#ifdef MAIN
 int main() 
 {
 	setlocale(LC_ALL, "");
@@ -85,4 +85,4 @@ int main()
 	Reservoir r2{ "Test", 1, 2, 3 };
 	//r2 = r1;
 }
-#endif //MAIN_7
+#endif //MAIN

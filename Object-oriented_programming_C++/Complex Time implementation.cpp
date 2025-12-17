@@ -2,9 +2,9 @@
 #include "Time.h"
 #include "Complex.h"
 
-//#define MAIN_9
+//#define MAIN
 
-#ifdef MAIN_9
+#ifdef MAIN
 int main() 
 {
     setlocale(LC_ALL, "");
@@ -99,4 +99,4 @@ int main()
     Complex c8(c4);
     std::cout << c8 << std::endl;
 }
-#endif //MAIN_9
+#endif //MAIN

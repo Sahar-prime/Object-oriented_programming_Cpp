@@ -2,9 +2,9 @@
 #include "MedalRow.h"
 #include "MedalTable.h"
 
-//#define MAIN_11
+//#define MAIN
 
-#ifdef MAIN_11
+#ifdef MAIN
 int main() 
 {
 	MedalRow mr;
@@ -24,4 +24,4 @@ int main()
 	mt.print();
 
 }
-#endif //MAIN_11
+#endif //MAIN

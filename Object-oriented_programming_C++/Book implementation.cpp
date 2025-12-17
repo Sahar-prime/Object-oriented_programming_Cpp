@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Book.h"
 
-//#define MAIN_6
+//#define MAIN
 
 void show(Book* b, int size) 
 {
@@ -41,7 +41,7 @@ void search_year(Book* b, int size, int year)
 	}
 }
 
-#ifdef MAIN_6
+#ifdef MAIN
 int main()
 { 
 	setlocale(LC_ALL, "");
@@ -59,4 +59,4 @@ int main()
 	std::cout << std::endl;
 	search_year(b1, 3, 2000);
 }
-#endif //MAIN_6
+#endif //MAIN

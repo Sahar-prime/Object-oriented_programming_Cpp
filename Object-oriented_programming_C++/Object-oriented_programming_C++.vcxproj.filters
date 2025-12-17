@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Student implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Student.cpp">
@@ -27,7 +27,7 @@
     <ClCompile Include="h_w.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_2.cpp">
+    <ClCompile Include="Lift and Date implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Lift.cpp">
@@ -36,7 +36,7 @@
     <ClCompile Include="h_w_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_3.cpp">
+    <ClCompile Include="Point and Person implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Point.cpp">
@@ -51,7 +51,7 @@
     <ClCompile Include="Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_4.cpp">
+    <ClCompile Include="Drob and Stor implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Drob.cpp">
@@ -60,7 +60,7 @@
     <ClCompile Include="Stor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_5.cpp">
+    <ClCompile Include="Array implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Array.cpp">
@@ -69,7 +69,7 @@
     <ClCompile Include="Book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_6.cpp">
+    <ClCompile Include="Book implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Worker.cpp">
@@ -81,7 +81,7 @@
     <ClCompile Include="Point_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_7.cpp">
+    <ClCompile Include="Point_2 Reservoir implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="h_w_3.cpp">
@@ -90,7 +90,7 @@
     <ClCompile Include="Drob_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_8.cpp">
+    <ClCompile Include="Drob_2 implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Airplane.cpp">
@@ -105,7 +105,7 @@
     <ClCompile Include="Time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_9.cpp">
+    <ClCompile Include="Complex Time implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Complex.cpp">
@@ -117,7 +117,7 @@
     <ClCompile Include="h_w_4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_10.cpp">
+    <ClCompile Include="Array implementation_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Person_2.cpp">
@@ -129,13 +129,19 @@
     <ClCompile Include="Rect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_11.cpp">
+    <ClCompile Include="MedalRow and MedalTable implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MedalRow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MedalTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynArray implementation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -213,6 +219,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MedalTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DynArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

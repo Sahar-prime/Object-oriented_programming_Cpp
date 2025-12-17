@@ -3,7 +3,7 @@
 #include "Drob.h"
 #include "Stor.h"
 
-//#define MAIN_4
+//#define MAIN
 
 class Stud
 {
@@ -31,7 +31,7 @@ public:
 
 int Stud::group{ 111 }; //Создается до создания объектов
 
-#ifdef MAIN_4
+#ifdef MAIN
 int main() 
 {
     setlocale(LC_ALL, "");
@@ -96,4 +96,4 @@ int main()
     a.show(); // Должен вывести 6/4
     std::cout << std::endl;
 }
-#endif //MAIN_4
+#endif //MAIN

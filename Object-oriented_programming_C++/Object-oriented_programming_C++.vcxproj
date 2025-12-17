@@ -24,7 +24,7 @@
     <ProjectGuid>{a551740f-3b3f-4c22-87aa-1a3ca94772c6}</ProjectGuid>
     <RootNamespace>ObjectorientedprogrammingC</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Constructors_Destructors</ProjectName>
+    <ProjectName>Constructors_and_Destructors</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -137,22 +137,24 @@
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Drob.cpp" />
     <ClCompile Include="Drob_2.cpp" />
+    <ClCompile Include="DynArray.cpp" />
     <ClCompile Include="h_w.cpp" />
     <ClCompile Include="h_w_2.cpp" />
     <ClCompile Include="h_w_3.cpp" />
     <ClCompile Include="h_w_4.cpp" />
     <ClCompile Include="Lift.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="main_10.cpp" />
-    <ClCompile Include="main_11.cpp" />
-    <ClCompile Include="main_2.cpp" />
-    <ClCompile Include="main_3.cpp" />
-    <ClCompile Include="main_4.cpp" />
-    <ClCompile Include="main_5.cpp" />
-    <ClCompile Include="main_6.cpp" />
-    <ClCompile Include="main_7.cpp" />
-    <ClCompile Include="main_8.cpp" />
-    <ClCompile Include="main_9.cpp" />
+    <ClCompile Include="Student implementation.cpp" />
+    <ClCompile Include="Array implementation_2.cpp" />
+    <ClCompile Include="MedalRow and MedalTable implementation.cpp" />
+    <ClCompile Include="DynArray implementation.cpp" />
+    <ClCompile Include="Lift and Date implementation.cpp" />
+    <ClCompile Include="Point and Person implementation.cpp" />
+    <ClCompile Include="Drob and Stor implementation.cpp" />
+    <ClCompile Include="Array implementation.cpp" />
+    <ClCompile Include="Book implementation.cpp" />
+    <ClCompile Include="Point_2 Reservoir implementation.cpp" />
+    <ClCompile Include="Drob_2 implementation.cpp" />
+    <ClCompile Include="Complex Time implementation.cpp" />
     <ClCompile Include="MedalRow.cpp" />
     <ClCompile Include="MedalTable.cpp" />
     <ClCompile Include="Overcoat.cpp" />
@@ -180,6 +182,7 @@
     <ClInclude Include="Date.h" />
     <ClInclude Include="Drob.h" />
     <ClInclude Include="Drob_2.h" />
+    <ClInclude Include="DynArray.h" />
     <ClInclude Include="Lift.h" />
     <ClInclude Include="MedalRow.h" />
     <ClInclude Include="MedalTable.h" />

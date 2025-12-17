@@ -2,10 +2,10 @@
 #include "Point.h"
 #include "Person.h"
 
-//#define MAIN_3
+//#define MAIN
 
-#ifdef MAIN_3
-int main() 
+#ifdef MAIN
+int main()
 {
 	setlocale(LC_ALL, "");
 
@@ -42,4 +42,4 @@ int main()
 	p8_0.show();
 
 }
-#endif //MAIN_3
+#endif //MAIN

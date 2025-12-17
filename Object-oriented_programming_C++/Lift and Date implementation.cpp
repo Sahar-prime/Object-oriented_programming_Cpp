@@ -2,9 +2,9 @@
 #include "Lift.h"
 #include "Date.h"
 
-//#define MAIN_2
+//#define MAIN
 
-#ifdef MAIN_2
+#ifdef MAIN
 int main() 
 {
 	setlocale(LC_ALL, "");
@@ -47,4 +47,4 @@ int main()
 	std::cout << d5_0 << std::endl;
 
 }
-#endif //MAIN_2
+#endif //MAIN

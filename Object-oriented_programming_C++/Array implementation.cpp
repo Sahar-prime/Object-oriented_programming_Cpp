@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include "Array.h"
 
-//#define MAIN_5
+//#define MAIN
 
 void show(const Array& a) 
 {
@@ -12,7 +12,7 @@ void show(const Array& a)
     std::cout << std::endl;
 }
 
-#ifdef MAIN_5
+#ifdef MAIN
 int main() 
 {
     setlocale(LC_ALL, "");
@@ -130,4 +130,4 @@ int main()
     std::cout << a1.getElem(5) << std::endl;
     a1.setElem(4, 2);
 }
-#endif //MAIN_5
+#endif //MAIN

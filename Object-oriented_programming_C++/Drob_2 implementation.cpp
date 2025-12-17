@@ -1,9 +1,9 @@
 ﻿#include <iostream>
 #include "Drob_2.h"
 
-//#define MAIN_8
+//#define MAIN
 
-#ifdef MAIN_8
+#ifdef MAIN
 int main() 
 {
 	setlocale(LC_ALL, "");
@@ -77,4 +77,4 @@ int main()
 	}
 	std::cout << std::endl;
 }
-#endif //MAIN_8
+#endif //MAIN
