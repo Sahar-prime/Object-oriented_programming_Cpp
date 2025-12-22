@@ -9,23 +9,76 @@ public:
 	Array(int size);
 	Array(const Array& a); //Глубокое копирование
     Array(Array&& a)noexcept;
+
 	Array& setElem(int ind, int val);
+
 	int getElem(int ind) const;
-	Array& randomize(int a, int b);
+    int getSize()const;
+
 	~Array();
-	void print();
+
+    Array& randomize(int a, int b);
+	void print() const;
+
+    //заполнен или нет
+    operator bool() const
+    { 
+        for (int i = 0; i < size; i++) 
+        {
+            if (arr[i] != 0) 
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    //сумма всех элементов
+    operator int() const 
+    {
+        int sum = 0;
+        for (int i = 0; i < size; ++i)
+        {
+            sum += arr[i];
+        }
+        return sum;
+    }
+    //средне арифметическое
+    operator float() const 
+    {
+        if (size == 0) 
+        {
+            return 0; // Избегаем деления на ноль
+        }
+        float sum = 0;
+        for (int i = 0; i < size; ++i) 
+        {
+            sum += arr[i];
+        }
+        return sum / size;
+    }
+    //***преобразовать массив в строку
+    operator char*() const
+    {
+        char* newstr = new char[size + 1];
+        for (int i = 0; i < size; ++i)
+        {
+            newstr[i] = arr[i] + 48;
+        }
+        newstr[size] = '\0';
+        return newstr;
+    }
+
 	//2 пара
 	Array& reSize(int size); //Если больше - мусор
 	Array& sortArr(); //Пузырковая
+
 	int minElem() const;
 	int maxElem() const;
-	int getSize()const;
 
     int operator[](int ind)const //get
     {
         return arr[ind];
     }
-
     int& operator[](int ind) //set
     {
         return arr[ind];

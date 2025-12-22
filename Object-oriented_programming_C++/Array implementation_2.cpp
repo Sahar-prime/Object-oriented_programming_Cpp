@@ -39,7 +39,6 @@ int main()
 	//const int& refXXX = x + 20;
 	//int&& reffX = x + 20; //R-value ссылка (на объект без имени)
 	//reffX += 10;
-
 	//std::cout << x << " " << &x << std::endl;
 	//std::cout << refX << " " << &refX << std::endl;
 	//std::cout << refXX << " " << &refXX << std::endl;
@@ -54,11 +53,22 @@ int main()
 	//std::cout << refX << " " << &refX << std::endl;
 	//std::cout << refXX << " " << &refXX << std::endl;
 	//std::cout << refXXX << " " << &refXXX << std::endl;
-
 	//std::cout << 5 + 10 << std::endl;
-	/*refXX = 5;
-	std::cout << x << " " << &x << std::endl;
-	std::cout << refX << " " << &refX << std::endl;
-	std::cout << refXX << " " << &refXX << std::endl;*/
+	//refXX = 5;
+	//std::cout << x << " " << &x << std::endl;
+	//std::cout << refX << " " << &refX << std::endl;
+	//std::cout << refXX << " " << &refXX << std::endl;
+
+	Array a;
+	a.randomize(0, 9).print();
+	const Array a2{ 10 };
+	a2.print();
+	Array a3{ a2 };
+	a3.print();
+	std::cout << bool(a) << std::endl;
+	std::cout << int(a) << std::endl;
+	std::cout << float(a) << std::endl;
+	std::cout << (char*)(a) << std::endl;
+
 }
 #endif //MAIN

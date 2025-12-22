@@ -64,7 +64,7 @@ Array& Array::randomize(int a, int b)
 	return *this;
 }
 
-void Array::print() 
+void Array::print() const
 {
 	for (int i = 0; i < size; ++i) {
 		std::cout << arr[i] << " ";
