@@ -11,6 +11,9 @@ public:
     ~DynArray_2d();
 
     void deleteCol(int pos);
+    void addColum(int pos);
+    void deleteRow(int pos);
+    void addRow(int pos);
 
     void init(); 
     void print() const;          
