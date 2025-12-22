@@ -81,7 +81,7 @@
     <ClCompile Include="Point_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Point_2 Reservoir implementation.cpp">
+    <ClCompile Include="Point_2 and Reservoir implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="h_w_3.cpp">
@@ -105,7 +105,7 @@
     <ClCompile Include="Time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Complex Time implementation.cpp">
+    <ClCompile Include="Complex and Time implementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Complex.cpp">

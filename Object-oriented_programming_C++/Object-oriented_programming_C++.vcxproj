@@ -155,9 +155,9 @@
     <ClCompile Include="Drob and Stor implementation.cpp" />
     <ClCompile Include="Array implementation.cpp" />
     <ClCompile Include="Book implementation.cpp" />
-    <ClCompile Include="Point_2 Reservoir implementation.cpp" />
+    <ClCompile Include="Point_2 and Reservoir implementation.cpp" />
     <ClCompile Include="Drob_2 implementation.cpp" />
-    <ClCompile Include="Complex Time implementation.cpp" />
+    <ClCompile Include="Complex and Time implementation.cpp" />
     <ClCompile Include="MedalRow.cpp" />
     <ClCompile Include="MedalTable.cpp" />
     <ClCompile Include="Overcoat.cpp" />
