@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="Airplane.cpp" />
     <ClCompile Include="Array.cpp" />
+    <ClCompile Include="Array_01.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Company.cpp" />
@@ -177,6 +178,7 @@
   <ItemGroup>
     <ClInclude Include="Airplane.h" />
     <ClInclude Include="Array.h" />
+    <ClInclude Include="Array_01.h" />
     <ClInclude Include="DynArray_2d.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="Circle.h" />

@@ -1,29 +1,26 @@
-﻿#include "Array.h"
+﻿#include "Array_01.h"
 #include <iostream>
 
-template <typename T>
-Array<T>::Array() : size{ 5 }
+Array_01::Array_01() : size{ 5 }
 {
-	arr = new T[size];
+	arr = new int[size];
 	for (int i = 0; i < size; ++i)
 	{
-		arr[i] = T{};
+		arr[i] = 0;
 	}
 	std::cout << "Отработал конструктор: " << this << std::endl;
 }
 
-template <typename T>
-Array<T>::Array(int size) : arr{ new T[size] }, size{ size }
+Array_01::Array_01(int size) : arr{ new int[size] }, size{ size }
 {
 	for (int i = 0; i < size; ++i)
 	{
-		arr[i] = T{};
+		arr[i] = 0;
 	}
 	std::cout << "Отработал конструктор: " << this << std::endl;
 }
 
-template <typename T>
-Array<T>::Array(const Array<T>& a) : size{ a.size }, arr{ new T[a.size] }
+Array_01::Array_01(const Array_01& a) : size{ a.size }, arr{ new int[a.size] }
 {
 	for (int i = 0; i < size; ++i)
 	{
@@ -32,16 +29,14 @@ Array<T>::Array(const Array<T>& a) : size{ a.size }, arr{ new T[a.size] }
 	std::cout << "Отработал конструктор копий: " << this << std::endl;
 }
 
-template <typename T>
-Array<T>::Array(Array<T>&& a) noexcept : size{ a.size }, arr{ a.arr }
+Array_01::Array_01(Array_01&& a)noexcept : size{ a.size }, arr{ a.arr }
 {
 	a.arr = nullptr;
 	a.size = 0;
 	std::cout << "Отработал конструктор перемещения: " << this << std::endl;
 }
 
-template <typename T>
-Array<T>& Array<T>::setElem(int ind, T val)
+Array_01& Array_01::setElem(int ind, int val)
 {
 	if (ind >= 0 && ind < size)
 	{
@@ -50,24 +45,26 @@ Array<T>& Array<T>::setElem(int ind, T val)
 	return *this;
 }
 
-template <typename T>
-T Array<T>::getElem(int ind) const
+int Array_01::getElem(int ind) const
 {
 	return arr[ind];
+	/*
+	if (ind >= 0 && ind < size)
+	{
+		std::cout << "Элемент [" << ind << "]: " << arr[ind] << std::endl;
+	}*/
 }
 
-template <typename T>
-Array<T>& Array<T>::randomize(T a, T b)
+Array_01& Array_01::randomize(int a, int b)
 {
 	for (int i = 0; i < size; ++i)
 	{
-		arr[i] = static_cast<T>(rand() % (static_cast<int>(b) - static_cast<int>(a) + 1) + static_cast<int>(a));
+		arr[i] = rand() % (b - a + 1) + a;
 	}
 	return *this;
 }
 
-template <typename T>
-void Array<T>::print() const
+void Array_01::print() const
 {
 	for (int i = 0; i < size; ++i) {
 		std::cout << arr[i] << " ";
@@ -75,17 +72,15 @@ void Array<T>::print() const
 	std::cout << std::endl;
 }
 
-template <typename T>
-Array<T>::~Array()
+Array_01::~Array_01()
 {
 	delete[] this->arr;
 	std::cout << "Отработал деструктор: " << this << "\n";
 }
 
-template <typename T>
-Array<T>& Array<T>::reSize(int newSize)
+Array_01& Array_01::reSize(int newSize)
 {
-	T* newArr = new T[newSize];
+	int* newArr = new int[newSize];
 	int elementsToCopy = (newSize < size) ? newSize : size;
 	for (int i = 0; i < elementsToCopy; ++i)
 	{
@@ -97,8 +92,7 @@ Array<T>& Array<T>::reSize(int newSize)
 	return *this;
 }
 
-template <typename T>
-Array<T>& Array<T>::sortArr()
+Array_01& Array_01::sortArr()
 {
 	for (int i = 0; i < size - 1; ++i)
 	{
@@ -106,7 +100,7 @@ Array<T>& Array<T>::sortArr()
 		{
 			if (arr[j] > arr[j + 1])
 			{
-				T temp = arr[j];
+				int temp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = temp;
 			}
@@ -115,10 +109,9 @@ Array<T>& Array<T>::sortArr()
 	return *this;
 }
 
-template <typename T>
-T Array<T>::minElem() const
+int Array_01::minElem() const
 {
-	T minVal = arr[0];
+	int minVal = arr[0];
 	for (int i = 1; i < size; ++i)
 	{
 		if (arr[i] < minVal)
@@ -129,10 +122,9 @@ T Array<T>::minElem() const
 	return minVal;
 }
 
-template <typename T>
-T Array<T>::maxElem() const
+int Array_01::maxElem() const
 {
-	T maxVal = arr[0];
+	int maxVal = arr[0];
 	for (int i = 1; i < size; ++i)
 	{
 		if (arr[i] > maxVal)
@@ -143,8 +135,7 @@ T Array<T>::maxElem() const
 	return maxVal;
 }
 
-template <typename T>
-int Array<T>::getSize() const
+int Array_01::getSize()const
 {
 	return size;
 }

@@ -1,9 +1,9 @@
 ﻿#include <iostream>
-#include "Array.h"
+#include "Array_01.h"
 
 //#define MAIN
 
-void show(const Array& a) 
+void show(const Array_01& a) 
 {
     for (int i = 0; i < a.getSize(); i++) 
     {
@@ -16,58 +16,58 @@ void show(const Array& a)
 int main() 
 {
     setlocale(LC_ALL, "");
-    Array def;
+    Array_01 def;
     def.print();
 
-    Array a(5); 
+    Array_01 a(5);
     a.randomize(5, 10).print(); 
 
-    Array b = a;
+    Array_01 b = a;
     b.print();
 
     a.setElem(2, 100).print();
     a.getElem(2);
 
-    Array c;
+    Array_01 c;
     c.randomize(1, 15).sortArr().reSize(6).print();
 
-    Array g (5);
+    Array_01 g (5);
     show(g);
 
-    show(Array{5});
+    show(Array_01{5});
 
-    Array aaa, bbb;
+    Array_01 aaa, bbb;
     aaa.randomize(5, 54);
     bbb.randomize(5, 33);
     std::cout << aaa + bbb << std::endl;
     std::cout << aaa * 2 << std::endl;
 
-    Array ccc;
+    Array_01 ccc;
     ccc.randomize(5, 10);
     ++ccc;
     std::cout << ccc << std::endl;
     --ccc;
     std::cout << ccc << std::endl;
 
-    Array ddd(5);
+    Array_01 ddd(5);
     ddd.randomize(1, 10);
     std::cout << "Array ddd: " << ddd << std::endl;
     ddd += 2;
     std::cout << "After a += b: " << ddd << std::endl;
 
-    Array mmm(4);
+    Array_01 mmm(4);
     mmm.randomize(1, 10);
     std::cout << "Array mmm: " << mmm << std::endl;
     mmm -= 1;
     std::cout << "After a -= b: " << mmm << std::endl;
 
-    Array hhh(4);
+    Array_01 hhh(4);
     hhh.randomize(1, 10);
     std::cout << "Array ggg: " << hhh << std::endl;
     hhh *= 2;
     std::cout << "After a *= b: " << hhh << std::endl;
 
-    Array ggg(4);
+    Array_01 ggg(4);
     ggg.randomize(1, 10);
     std::cout << "Array ggg: " << ggg << std::endl;
     ggg /= 2;
@@ -91,7 +91,7 @@ int main()
         std::cout<< ggg << "> " << hhh << std::endl;
     }
 
-    Array zzz(5), xxx(5);
+    Array_01 zzz(5), xxx(5);
     if (zzz == xxx)
     {
         std::cout << zzz << "= " << xxx << std::endl;
@@ -110,18 +110,18 @@ int main()
         std::cout << ggg << "= " << hhh << std::endl;
     }
 
-    Array uuu, jjj;
+    Array_01 uuu, jjj;
     uuu.randomize(5, 16);
     std::cout << uuu << std::endl;
     jjj = uuu;
     std::cout << jjj << std::endl;
 
-    Array a1{ 10 };
+    Array_01 a1{ 10 };
     a1.randomize(0, 9).print();
-    Array a2{ a1 }; //копия
+    Array_01 a2{ a1 }; //копия
     a1.print();
     a2.print();
-    Array a3{ std::move(a2) }; //переместить
+    Array_01 a3{ std::move(a2) }; //переместить
     a2.print();
     a3.print();
 
