@@ -140,6 +140,7 @@
     <ClCompile Include="Drob_2.cpp" />
     <ClCompile Include="DynArray.cpp" />
     <ClCompile Include="DynArray_2d.cpp" />
+    <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="h_w.cpp" />
     <ClCompile Include="h_w_2.cpp" />
     <ClCompile Include="h_w_3.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="Drob.h" />
     <ClInclude Include="Drob_2.h" />
     <ClInclude Include="DynArray.h" />
+    <ClInclude Include="Fraction.h" />
     <ClInclude Include="Lift.h" />
     <ClInclude Include="MedalRow.h" />
     <ClInclude Include="MedalTable.h" />

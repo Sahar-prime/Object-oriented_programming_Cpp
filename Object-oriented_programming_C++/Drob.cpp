@@ -16,7 +16,7 @@ void Drob::setNum(int u)
 {
     num = u;
 }
-void Drob::setDenom(int u) 
+void Drob::setDenom(int u)
 {
     if (u == 0) 
     {
@@ -52,12 +52,12 @@ void Drob::show() const
     std::cout << num << "/" << den << std::endl;
 }
 
-void Drob::add(const Drob& other) 
+void Drob::add(const Drob& other)
 {
     num = num * other.den + other.num * den;
     den = den * other.den;
 }
-void Drob::subtract(const Drob& other) 
+void Drob::subtract(const Drob& other)
 {
     num = num * other.den - other.num * den;
     den = den * other.den;
