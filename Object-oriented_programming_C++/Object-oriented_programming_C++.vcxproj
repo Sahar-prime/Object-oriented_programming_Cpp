@@ -146,7 +146,11 @@
     <ClCompile Include="h_w_3.cpp" />
     <ClCompile Include="h_w_4.cpp" />
     <ClCompile Include="Lift.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="QueuePriority.cpp" />
+    <ClCompile Include="Using a template.cpp" />
+    <ClCompile Include="Stack and Queue implementation.cpp" />
+    <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Student implementation.cpp" />
     <ClCompile Include="Array implementation_2.cpp" />
     <ClCompile Include="MedalRow and MedalTable implementation.cpp" />
@@ -198,8 +202,11 @@
     <ClInclude Include="Person_2.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Point_2.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="QueuePriority.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="Reservoir.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="Stor.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Student.h" />

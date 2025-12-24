@@ -147,13 +147,25 @@
     <ClCompile Include="DynArray_2d.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Using a template.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Array_01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Fraction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack and Queue implementation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QueuePriority.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -243,6 +255,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Fraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QueuePriority.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
