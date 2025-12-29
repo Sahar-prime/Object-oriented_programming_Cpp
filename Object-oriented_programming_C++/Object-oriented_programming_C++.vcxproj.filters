@@ -168,6 +168,9 @@
     <ClCompile Include="QueuePriority.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="QueuePriority_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">
@@ -264,6 +267,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="QueuePriority.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QueuePriority_2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

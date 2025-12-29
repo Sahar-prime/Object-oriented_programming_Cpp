@@ -1,13 +1,13 @@
 ﻿#pragma once
-class QueuePriority  //с приоритетным включением
+class QueuePriority_2 //с приоритетным исключением
 {
 	int* arr;
 	int* pri;
 	int current_size;
 	int max_size;
 public:
-	QueuePriority(int max_size);
-	~QueuePriority();
+	QueuePriority_2(int max_size);
+	~QueuePriority_2();
 	void Push(int x, int p);
 	int Pop();
 	void Clear();

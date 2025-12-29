@@ -82,11 +82,11 @@ int QueuePriority::getSize()
     return current_size;
 }
 
-void QueuePriority::print()
+void QueuePriority::Print()
 {
     for (int i = 0; i < current_size; i++)
     {
-        std::cout << arr[i] << " - " << pri[i] << std::endl;;
+        std::cout << arr[i] << " - " << pri[i] << std::endl;
     }
     std::cout << std::endl;
 }
