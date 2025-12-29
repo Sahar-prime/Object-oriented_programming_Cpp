@@ -146,6 +146,7 @@
     <ClCompile Include="h_w_3.cpp" />
     <ClCompile Include="h_w_4.cpp" />
     <ClCompile Include="Lift.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="QueuePriority.cpp" />
     <ClCompile Include="QueuePriority_2.cpp" />
     <ClCompile Include="Using a template.cpp" />
