@@ -146,7 +146,9 @@
     <ClCompile Include="h_w_3.cpp" />
     <ClCompile Include="h_w_4.cpp" />
     <ClCompile Include="Lift.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="List and List_2 implementation.cpp" />
+    <ClCompile Include="List.cpp" />
+    <ClCompile Include="List_2.cpp" />
     <ClCompile Include="QueuePriority.cpp" />
     <ClCompile Include="QueuePriority_2.cpp" />
     <ClCompile Include="Using a template.cpp" />
@@ -197,6 +199,8 @@
     <ClInclude Include="DynArray.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Lift.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="List_2.h" />
     <ClInclude Include="MedalRow.h" />
     <ClInclude Include="MedalTable.h" />
     <ClInclude Include="Overcoat.h" />
