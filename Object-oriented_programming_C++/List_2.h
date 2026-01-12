@@ -13,8 +13,10 @@ public:
 	~List_2();
 	void AddTail_2(int x);
 	void AddHead_2(int x);
+	void AddIndex(int index, int x);
 	void DelHead_2();
 	void DelTail_2();
+	void DelIndex(int index);
 	void Print_Head();
 	void Print_Tail();
 	int getSize_2();

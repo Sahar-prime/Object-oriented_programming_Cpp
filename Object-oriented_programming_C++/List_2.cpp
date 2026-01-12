@@ -44,6 +44,25 @@ void List_2::AddHead_2(int x)
 	}
 	head = elem;
 }
+void List_2::AddIndex(int index, int x)
+{
+	Node_2* temp = head;
+	if (temp != nullptr) 
+	{
+		for (int i = 0; i < index; i++) 
+		{
+			temp = temp->next;
+		}
+		Node_2* Prev = temp->prev;
+		Node_2* Next = temp;
+		Node_2* elem = new Node_2;
+		elem->value = x;
+		elem->prev = Prev;
+		elem->next = Next;
+		Prev->next = elem;
+		Next->prev = elem;
+	}
+}
 void List_2::DelHead_2()
 {
 	if (head == nullptr) return;
@@ -76,6 +95,37 @@ void List_2::DelTail_2()
 		head = tail;
 	}
 	delete temp;
+}
+void List_2::DelIndex(int index) 
+{
+	if (!head || index < 0) return; // Проверка на пустоту списка или некорректный индекс
+
+	Node_2* current = head;
+	// Быстрое удаление головы
+	if (index == 0) 
+	{
+		DelHead_2();
+		return;
+	}
+
+	// Поиск узла по индексу
+	for (int i = 0; current && i < index; ++i)
+		current = current->next;
+
+	// Проверка на выход за границы списка
+	if (!current) return;
+
+	// Быстрое удаление хвоста
+	if (current == tail)
+	{
+		DelTail_2();
+		return;
+	}
+
+	// Удаление текущего узла
+	current->prev->next = current->next;
+	current->next->prev = current->prev;
+	delete current;
 }
 void List_2::Print_Head()
 {
