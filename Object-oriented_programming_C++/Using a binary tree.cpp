@@ -157,7 +157,54 @@ void Tree::Insert(Node* node)
 }
 void Tree::Delete(Node* node) 
 {
-	
+	if (node != nullptr) 
+	{
+		Node* elem, * temp;
+		if (node->left == nullptr or node->right == nullptr) 
+		{
+			elem = node;
+		}
+		else 
+		{
+			elem = next(node);
+		}
+		if (elem->left != nullptr) 
+		{
+			temp = elem->left;
+		}
+		else 
+		{
+			temp = elem->right;
+		}
+		if (temp != nullptr) 
+		{
+			temp->parent = elem->parent;
+		}
+		if (elem->parent == nullptr) 
+		{
+			root = temp;
+		}
+		else if (elem->parent->left == elem) 
+		{
+			elem->parent->left = temp;
+		}
+		else
+		{
+			elem->parent->right = temp;
+		}
+		if (node != elem) 
+		{
+			node->value = elem->value;
+		}
+		delete elem;
+	}
+	else 
+	{
+		while (root != nullptr) 
+		{
+			Delete(root);
+		}
+	}
 }
 Tree::Node* Tree::GetRoot()
 {
@@ -172,8 +219,16 @@ int main()
 	{
 		Tree::Node* elem = new Tree::Node;
 		elem->value = rand() % 100;
+		std::cout << elem->value << std::endl;
 		t.Insert(elem);
 	}
 	t.print(t.GetRoot());
+	std::cout << std::endl;
+	t.Delete(t.GetRoot());
+	t.print(t.GetRoot());
+	std::cout << std::endl;
+	t.Delete(t.search(t.GetRoot(), 64));
+	t.print(t.GetRoot());
+	std::cout << std::endl;
 }
 #endif //MAIN
