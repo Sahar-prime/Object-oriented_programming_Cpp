@@ -149,6 +149,7 @@
     <ClCompile Include="List and List_2 implementation.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="List_2.cpp" />
+    <ClCompile Include="Using inheritance.cpp" />
     <ClCompile Include="Using a binary tree.cpp" />
     <ClCompile Include="QueuePriority.cpp" />
     <ClCompile Include="QueuePriority_2.cpp" />
