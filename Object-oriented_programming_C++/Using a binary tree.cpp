@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 
+//#define MAIN
+
 class Tree 
 {
 public:
@@ -80,11 +82,46 @@ Tree::Node* Tree::max(Node* node)
 }
 Tree::Node* Tree::prev(Node* node)
 {
-	return 0;
+	if (node != nullptr)
+	{
+		if (node->left != nullptr)
+		{
+			return max(node->left);
+		}
+		else
+		{
+			Node* copy = node;
+			Node* temp_parent = node->parent;
+			while (temp_parent != nullptr && temp_parent->left == copy)
+			{
+				copy = temp_parent;
+				temp_parent = temp_parent->parent;
+			}
+			return temp_parent;
+		}
+	}
+	return nullptr;
 }
 Tree::Node* Tree::next(Node* node) 
 {
-	return 0;
+	if (node != nullptr)
+	{
+		if (node->right != nullptr)
+		{
+			return min(node->right);
+		}
+		else
+		{
+			Node* copy = node;
+			Node* temp_parent = node->parent;
+			while (temp_parent != nullptr and temp_parent->right == copy)
+			{
+				copy = temp_parent;
+				temp_parent = temp_parent->parent;
+			}
+			return temp_parent;
+		}
+	}
 }
 void Tree::Insert(Node* node) 
 {
@@ -127,6 +164,7 @@ Tree::Node* Tree::GetRoot()
 	return root;
 }
 
+#ifdef MAIN
 int main()
 {
 	Tree t;
@@ -138,3 +176,4 @@ int main()
 	}
 	t.print(t.GetRoot());
 }
+#endif //MAIN

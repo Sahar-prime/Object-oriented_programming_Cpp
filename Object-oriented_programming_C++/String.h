@@ -25,6 +25,8 @@ public:
     // Метод для вывода строки (для проверки)
     String& print();
 
+    const char& operator[](size_t index) const;
+
     String& operator=(const String& s)
     {
         if (this == &s) return *this;

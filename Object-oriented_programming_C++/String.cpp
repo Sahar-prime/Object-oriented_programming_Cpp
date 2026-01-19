@@ -51,3 +51,12 @@ String& String::print()
     std::cout << str << std::endl;
     return *this;
 }
+
+const char& String::operator[](size_t index) const
+{
+    if (index >= length)
+    {
+        throw std::out_of_range("Индекс вне диапазона");
+    }
+    return str[index];
+}
