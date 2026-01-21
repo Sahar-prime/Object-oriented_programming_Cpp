@@ -205,6 +205,94 @@ public:
 	}
 };
 
+class CPU 
+{
+protected:
+	int cores;
+	double frequency;
+public:
+	CPU(int cores, double frequency) : cores{ cores }, frequency{ frequency } {}
+	void set_cores(int cores) 
+	{
+		this->cores = cores;
+	}
+	void set_frequency(double frequency) 
+	{
+		this->frequency = frequency;
+	}
+	int get_cores() const 
+	{
+		return cores;
+	}
+	double get_frequency() const
+	{
+		return frequency;
+	}
+	void print() const
+	{
+		std::cout << "Cores: " << cores << std::endl;
+		std::cout << "Frequency: " << frequency << std::endl;
+	}
+};
+class RAM 
+{
+protected:
+	char firm[20];
+	int count;
+public:
+	RAM(const char* firm, int count) : count{count}
+	{
+		strcpy(this->firm, firm);
+	}
+	void set_firm(const char* firm) 
+	{
+		strcpy(this->firm, firm);
+	}
+	void set_count(int count)
+	{
+		this->count = count;
+	}
+	const char* get_firm() const 
+	{
+		return firm;
+	}
+	int get_count() const 
+	{
+		return count;
+	}
+	void print() const 
+	{
+		std::cout << "Firm: " << firm << std::endl;
+		std::cout << "Count: " << count << std::endl;
+	}
+};
+
+class COMP : public CPU, public RAM
+{
+protected:
+	char name[20];
+public:
+	COMP (const char* name, int cores, double frequency, const char* firm, int count) :
+		CPU{ cores, frequency }, RAM{ firm, count }
+	{
+		strcpy(this->name, name);
+	}
+	void set_name() 
+	{
+		strcpy(this->name, name);
+	}
+	const char* get_name() const 
+	{
+		return name;
+	}
+	void print() const 
+	{
+		std::cout << "Name: " << name << std::endl;
+		CPU::print();
+		RAM::print();
+	}
+};
+
 #ifdef MAIN
 int main() 
 {
@@ -218,6 +306,10 @@ int main()
 	c.set_sleep(12);
 	std::cout << c.get_name() << " " << c.get_years() << std::endl;
 	std::cout << c.get_breed() << " " << c.get_sleep() << std::endl << std::endl;
+
+	Lion l{ "Alex", 10, "asd", 13.5, "Afrika", "tip" };
+	l.print();
+	std::cout << std::endl;
 //Student
 	Student s("Ivan", 1);
 	s.set_name("Max");
@@ -228,6 +320,9 @@ int main()
 	a.set_name_job("Physics");
 	a.set_status(false);
 	a.print();
-	std::cout << a.get_name_job() << " - " << a.get_status() << "\n";
+	std::cout << a.get_name_job() << " - " << a.get_status() << "\n" << std::endl;;
+//COMP
+	COMP comp{ "qwerty", 4, 2.2, "test", 2 };
+	comp.print();
 }
 #endif //MAIN
