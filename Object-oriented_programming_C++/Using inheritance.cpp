@@ -69,6 +69,73 @@ public:
 		std::cout << "Sleep: " << sleep << std::endl;
 	}
 };
+class Dog : public Animal 
+{
+protected:
+	int number_commands;
+	double size_dog;
+public:
+	Dog(const char* name, int years, int number_commands, double size_dog) :
+		Animal{ name, years }, size_dog{ size_dog }, number_commands{ number_commands } 
+	{}
+	void set_number_commands(int number_commands)
+	{
+		this->number_commands = number_commands;
+	}
+	void set_size_dog(double size_dog)
+	{
+		this->size_dog = size_dog;
+	}
+	double get_size_dog()const
+	{
+		return size_dog;
+	}
+	int get_number_commands()const
+	{
+		return number_commands;
+	}
+	void print() const
+	{
+		Animal::print();
+		std::cout << "Number commands: " << number_commands << std::endl;
+		std::cout << "Size dog: " << size_dog << std::endl;
+	}
+};
+class Lion : public Cat
+{
+protected:
+	char terr[20];
+	char flock[20];
+public:
+	Lion(const char* name, int years, const char* breed, double sleep, const char* terr, const char* flock)
+		: Cat(name, years, breed, sleep)
+	{
+		strcpy(this->terr, terr);
+		strcpy(this->flock, flock);
+	}
+	void set_terr(const char* terr) 
+	{
+		strcpy(this->terr, terr); 
+	}
+	void set_flock(const char* flock) 
+	{ 
+		strcpy(this->flock, flock); 
+	}
+	const char* get_terr() const 
+	{ 
+		return terr; 
+	}
+	const char* get_flock() const 
+	{ 
+		return flock;
+	}
+	void print() const 
+	{
+		Cat::print();
+		std::cout << "Territory: " << terr << std::endl;
+		std::cout << "Flock: " << flock << std::endl;
+	}
+};
 
 class Student
 {
