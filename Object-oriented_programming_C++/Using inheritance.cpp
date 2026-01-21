@@ -266,7 +266,6 @@ public:
 		std::cout << "Count: " << count << std::endl;
 	}
 };
-
 class COMP : public CPU, public RAM
 {
 protected:
@@ -290,6 +289,95 @@ public:
 		std::cout << "Name: " << name << std::endl;
 		CPU::print();
 		RAM::print();
+	}
+};
+
+class Camera 
+{
+protected:
+	int megapixels;
+	bool stabilization;
+public:
+	Camera(int megapixels, bool stabilization) :
+		megapixels{ megapixels },
+		stabilization{ stabilization } {}
+	void set_megapixels(int megapixels) 
+	{
+		this->megapixels = megapixels;
+	}
+	void set_stabilization(bool stabilization) 
+	{
+		this->stabilization = stabilization;
+	}
+	int get_megapixels()const 
+	{
+		return megapixels;
+	}
+	bool get_stabilization()const
+	{
+		return stabilization;
+	}
+	void print() const 
+	{
+		std::cout << "Megapixels: " << megapixels << std::endl;
+		std::cout << "Stabilization: " << (stabilization ? "Yes" : "No") << std::endl;
+	}
+};
+class Phone 
+{
+protected:
+	double diag;
+	int battery;
+public:
+	Phone(double diag, int battery) :
+		diag{ diag },
+		battery{ battery } {}
+	void set_diag(double diag) 
+	{
+		this->diag = diag;
+	}
+	void set_battery(int battery)
+	{
+		this->battery = battery;
+	}
+	double get_diag() const 
+	{
+		return diag;
+	}
+	int get_battery() const
+	{
+		return battery;
+	}
+	void print() const
+	{
+		std::cout << "Battery: " << battery << std::endl;
+		std::cout << "Diagonal: " << diag << std::endl;
+	}
+};
+class SmartPhone : public Camera, public Phone 
+{
+protected:
+	char name[20];
+public:
+	SmartPhone(const char* name, int megapixels, bool stabilization, double diag, int battery) : 
+		Camera{ megapixels ,stabilization }, 
+		Phone{ diag ,battery } 
+	{
+		strcpy(this->name, name);
+	}
+	void set_name(const char* name) 
+	{
+		strcpy(this->name, name);
+	}
+	const char* get_name() const 
+	{
+		return name;
+	}
+	void print() const
+	{
+		std::cout << "Name: " << name << std::endl;
+		Camera::print();
+		Phone::print();
 	}
 };
 
