@@ -9,7 +9,7 @@ protected:
     double volume;  
     char fuelType[50]; 
 public:
-    Engine(double v = 0.0, const char* ft = "") : volume(v) 
+    Engine(double v, const char* ft) : volume(v) 
     {
         strcpy(fuelType, ft);
     }
@@ -41,7 +41,7 @@ protected:
     int seatCount;    
 
 public:
-    Body(const char* c = "", int sc = 0) : seatCount(sc)
+    Body(const char* c, int sc) : seatCount(sc)
     {
         strcpy(color, c);
     }
@@ -70,10 +70,9 @@ class Car : public Engine, public Body
 {
 private:
     char brand[50];  
-
 public:
-    Car(const char* b = "", double v = 0.0, const char* ft = "",
-        const char* c = "", int sc = 0)
+    Car(const char* b, double v, const char* ft,
+        const char* c, int sc)
         : Engine(v, ft), Body(c, sc)
     {
         strcpy(brand, b);
