@@ -16,9 +16,6 @@
     <Filter Include="Source Files\Implementation">
       <UniqueIdentifier>{4e205367-7f9b-4e94-be26-0b10bc3bd2aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Use of something">
-      <UniqueIdentifier>{6d72c159-d45b-4270-995f-3b5296e6e1ba}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\h_w">
       <UniqueIdentifier>{e518e1a3-076f-4b9b-8873-6c3450bae9cb}</UniqueIdentifier>
     </Filter>
@@ -103,11 +100,11 @@
     <Filter Include="Source Files\Class definition\Time">
       <UniqueIdentifier>{f355ecde-4005-4a40-92c8-3edae04fd58b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Inheritance">
+      <UniqueIdentifier>{d74e1a7b-b025-4f9d-a7b3-c5522ecdcee0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Array.cpp">
       <Filter>Source Files\Class definition\Array</Filter>
     </ClCompile>
@@ -167,15 +164,6 @@
     </ClCompile>
     <ClCompile Include="Student implementation.cpp">
       <Filter>Source Files\Implementation</Filter>
-    </ClCompile>
-    <ClCompile Include="Using a binary tree.cpp">
-      <Filter>Source Files\Use of something</Filter>
-    </ClCompile>
-    <ClCompile Include="Using a template.cpp">
-      <Filter>Source Files\Use of something</Filter>
-    </ClCompile>
-    <ClCompile Include="Using inheritance.cpp">
-      <Filter>Source Files\Use of something</Filter>
     </ClCompile>
     <ClCompile Include="h_w.cpp">
       <Filter>Source Files\h_w</Filter>
@@ -284,6 +272,21 @@
     </ClCompile>
     <ClCompile Include="Worker.cpp">
       <Filter>Source Files\Class definition\Worker</Filter>
+    </ClCompile>
+    <ClCompile Include="inheritance.cpp">
+      <Filter>Source Files\Inheritance</Filter>
+    </ClCompile>
+    <ClCompile Include="inheritance2.cpp">
+      <Filter>Source Files\Inheritance</Filter>
+    </ClCompile>
+    <ClCompile Include="Using a template.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Using a binary tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="h_w_7.cpp">
+      <Filter>Source Files\h_w</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
