@@ -4,7 +4,6 @@
 
 Rect::Rect() : start(Point_2()), a(0), b(0) {}
 
-
 Rect::Rect(const Rect& r) : start(r.start), a(r.a), b(r.b) {}
 
 Rect::Rect(Rect&& r) noexcept: start(std::move(r.start)), a(r.a), b(r.b)

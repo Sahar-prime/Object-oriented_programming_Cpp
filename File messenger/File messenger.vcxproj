@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a551740f-3b3f-4c22-87aa-1a3ca94772c6}</ProjectGuid>
-    <RootNamespace>ObjectorientedprogrammingC</RootNamespace>
+    <ProjectGuid>{8e3494cb-a84d-43c9-9b47-51040893874b}</ProjectGuid>
+    <RootNamespace>Filemessenger</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Constructors_and_Destructors</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,103 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Airplane.cpp" />
-    <ClCompile Include="Array.cpp" />
-    <ClCompile Include="Array_01.cpp" />
-    <ClCompile Include="Book.cpp" />
-    <ClCompile Include="Circle.cpp" />
-    <ClCompile Include="Company.cpp" />
-    <ClCompile Include="Complex.cpp" />
-    <ClCompile Include="Date.cpp" />
-    <ClCompile Include="Drob.cpp" />
-    <ClCompile Include="Drob_2.cpp" />
-    <ClCompile Include="DynArray.cpp" />
-    <ClCompile Include="DynArray_2d.cpp" />
-    <ClCompile Include="Fraction.cpp" />
-    <ClCompile Include="h_w.cpp" />
-    <ClCompile Include="h_w_2.cpp" />
-    <ClCompile Include="h_w_3.cpp" />
-    <ClCompile Include="h_w_4.cpp" />
-    <ClCompile Include="h_w_5.cpp" />
-    <ClCompile Include="h_w_6.cpp" />
-    <ClCompile Include="Lift.cpp" />
-    <ClCompile Include="List and List_2 implementation.cpp" />
-    <ClCompile Include="List.cpp" />
-    <ClCompile Include="List_2.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Using inheritance.cpp" />
-    <ClCompile Include="Using a binary tree.cpp" />
-    <ClCompile Include="QueuePriority.cpp" />
-    <ClCompile Include="QueuePriority_2.cpp" />
-    <ClCompile Include="Using a template.cpp" />
-    <ClCompile Include="Stack and Queue implementation.cpp" />
-    <ClCompile Include="Queue.cpp" />
-    <ClCompile Include="Stack.cpp" />
-    <ClCompile Include="Student implementation.cpp" />
-    <ClCompile Include="Array implementation_2.cpp" />
-    <ClCompile Include="MedalRow and MedalTable implementation.cpp" />
-    <ClCompile Include="DynArray and DynArray_2d implementation.cpp" />
-    <ClCompile Include="Lift and Date implementation.cpp" />
-    <ClCompile Include="Point and Person implementation.cpp" />
-    <ClCompile Include="Drob and Stor implementation.cpp" />
-    <ClCompile Include="Array implementation.cpp" />
-    <ClCompile Include="Book implementation.cpp" />
-    <ClCompile Include="Point_2 and Reservoir implementation.cpp" />
-    <ClCompile Include="Drob_2 implementation.cpp" />
-    <ClCompile Include="Complex and Time implementation.cpp" />
-    <ClCompile Include="MedalRow.cpp" />
-    <ClCompile Include="MedalTable.cpp" />
-    <ClCompile Include="Overcoat.cpp" />
-    <ClCompile Include="Person.cpp" />
-    <ClCompile Include="Person_2.cpp" />
-    <ClCompile Include="Point.cpp" />
-    <ClCompile Include="Point_2.cpp" />
-    <ClCompile Include="Rect.cpp" />
-    <ClCompile Include="Reservoir.cpp" />
-    <ClCompile Include="Stor.cpp" />
-    <ClCompile Include="String.cpp" />
-    <ClCompile Include="Student.cpp" />
-    <ClCompile Include="Task.cpp" />
-    <ClCompile Include="String implementation.cpp" />
-    <ClCompile Include="Time.cpp" />
-    <ClCompile Include="Worker.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Airplane.h" />
-    <ClInclude Include="Array.h" />
-    <ClInclude Include="Array_01.h" />
-    <ClInclude Include="DynArray_2d.h" />
-    <ClInclude Include="Book.h" />
-    <ClInclude Include="Circle.h" />
-    <ClInclude Include="Company.h" />
-    <ClInclude Include="Complex.h" />
-    <ClInclude Include="Date.h" />
-    <ClInclude Include="Drob.h" />
-    <ClInclude Include="Drob_2.h" />
-    <ClInclude Include="DynArray.h" />
-    <ClInclude Include="Fraction.h" />
-    <ClInclude Include="Lift.h" />
-    <ClInclude Include="List.h" />
-    <ClInclude Include="List_2.h" />
-    <ClInclude Include="MedalRow.h" />
-    <ClInclude Include="MedalTable.h" />
-    <ClInclude Include="Overcoat.h" />
-    <ClInclude Include="Person.h" />
-    <ClInclude Include="Person_2.h" />
-    <ClInclude Include="Point.h" />
-    <ClInclude Include="Point_2.h" />
-    <ClInclude Include="Queue.h" />
-    <ClInclude Include="QueuePriority.h" />
-    <ClInclude Include="QueuePriority_2.h" />
-    <ClInclude Include="Rect.h" />
-    <ClInclude Include="Reservoir.h" />
-    <ClInclude Include="Stack.h" />
-    <ClInclude Include="Stor.h" />
-    <ClInclude Include="String.h" />
-    <ClInclude Include="Student.h" />
-    <ClInclude Include="Task.h" />
-    <ClInclude Include="Time.h" />
-    <ClInclude Include="Worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

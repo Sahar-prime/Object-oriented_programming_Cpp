@@ -13,184 +13,277 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Implementation">
+      <UniqueIdentifier>{4e205367-7f9b-4e94-be26-0b10bc3bd2aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Use of something">
+      <UniqueIdentifier>{6d72c159-d45b-4270-995f-3b5296e6e1ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\h_w">
+      <UniqueIdentifier>{e518e1a3-076f-4b9b-8873-6c3450bae9cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition">
+      <UniqueIdentifier>{470991e6-239c-4587-b6b0-89100f8de23b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Fraction">
+      <UniqueIdentifier>{94bd4a19-b328-4875-b49b-a31686f45483}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Airplane">
+      <UniqueIdentifier>{82f0d5ad-0411-42c0-82a6-6e05086cf4e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Circle">
+      <UniqueIdentifier>{276ccca8-2c33-4c60-96a4-219cd118fa8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Complex">
+      <UniqueIdentifier>{ac539de8-a0f5-423e-b06d-b6ab1d16253b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Company">
+      <UniqueIdentifier>{762b2f81-7376-4091-aa14-7e8c1f532233}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Date">
+      <UniqueIdentifier>{545c182a-ab2d-4caf-96ad-32d7547057eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\MedalRow and MedalTable">
+      <UniqueIdentifier>{256bf355-05e1-4ee0-9c55-bd7a0f2c3be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Lift">
+      <UniqueIdentifier>{4956df7b-b46c-44c8-802e-f202a88a299f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\List">
+      <UniqueIdentifier>{f9d51b8b-f6c6-4c0b-8c1b-c0d97ea74619}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Drob">
+      <UniqueIdentifier>{4d5d6872-7a1d-432b-82d8-08632d59943a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Book">
+      <UniqueIdentifier>{75b3fb94-97fa-4230-ab2c-71deba01e0a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\DynArray">
+      <UniqueIdentifier>{4cf935ab-6b14-4ca7-ae4f-40739d1582e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Array">
+      <UniqueIdentifier>{3ddfba3b-14cc-4729-a543-ef61ecac939c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Worker">
+      <UniqueIdentifier>{7e01d95f-e352-4e3d-a48a-cb098241ce3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Task">
+      <UniqueIdentifier>{44784ba6-fb4e-42f7-bc03-34689919bc21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Student">
+      <UniqueIdentifier>{24ae089e-293f-4a6b-b990-9a2dd48b474a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Stor">
+      <UniqueIdentifier>{2386be49-e3eb-4259-9367-ea6090d07a3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Stack">
+      <UniqueIdentifier>{bbccfda3-7370-4653-9888-3fdf7dc16f56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Reservoir">
+      <UniqueIdentifier>{151c4c17-71d0-4fb5-a141-122b8d899722}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Rect">
+      <UniqueIdentifier>{cefa6594-2174-46ca-8072-9e5387cb5024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Overcoat">
+      <UniqueIdentifier>{4d48a54f-6e1f-4f54-ba78-a2405f0949ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\String">
+      <UniqueIdentifier>{34b81bdc-db99-4d4b-9138-889a80d68dc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Person">
+      <UniqueIdentifier>{fd7929f4-b768-4981-8a37-0a1a7803554d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Point">
+      <UniqueIdentifier>{6c6172f1-39df-461e-bbfe-24baef205eff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Queue">
+      <UniqueIdentifier>{4dc12653-d005-4cc0-9eed-269024912d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class definition\Time">
+      <UniqueIdentifier>{f355ecde-4005-4a40-92c8-3edae04fd58b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Student implementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Student.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Task.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="h_w.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Lift and Date implementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Lift.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="h_w_2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Point and Person implementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Point.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Person.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="String.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Drob and Stor implementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Drob.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Stor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Array implementation.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Array.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Book.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Book implementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Worker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Reservoir.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Point_2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Point_2 and Reservoir implementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="h_w_3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Drob_2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Drob_2 implementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Airplane.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Date.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Overcoat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Time.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Complex and Time implementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Complex.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Circle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="h_w_4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Array implementation_2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Person_2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Company.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Rect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MedalRow and MedalTable implementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MedalRow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MedalTable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DynArray and DynArray_2d implementation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DynArray.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DynArray_2d.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Using a template.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Class definition\Array</Filter>
     </ClCompile>
     <ClCompile Include="Array_01.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Class definition\Array</Filter>
     </ClCompile>
-    <ClCompile Include="Fraction.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="DynArray_2d.cpp">
+      <Filter>Source Files\Class definition\DynArray</Filter>
     </ClCompile>
-    <ClCompile Include="Stack.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="DynArray.cpp">
+      <Filter>Source Files\Class definition\DynArray</Filter>
     </ClCompile>
-    <ClCompile Include="Stack and Queue implementation.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Book.cpp">
+      <Filter>Source Files\Class definition\Book</Filter>
     </ClCompile>
-    <ClCompile Include="Queue.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Drob.cpp">
+      <Filter>Source Files\Class definition\Drob</Filter>
     </ClCompile>
-    <ClCompile Include="QueuePriority.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Drob_2.cpp">
+      <Filter>Source Files\Class definition\Drob</Filter>
     </ClCompile>
-    <ClCompile Include="QueuePriority_2.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Array implementation_2.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Array implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="DynArray and DynArray_2d implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Drob_2 implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Complex and Time implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Drob and Stor implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Lift and Date implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
     </ClCompile>
     <ClCompile Include="List and List_2 implementation.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Implementation</Filter>
     </ClCompile>
-    <ClCompile Include="List.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="MedalRow and MedalTable implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
     </ClCompile>
-    <ClCompile Include="List_2.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Point and Person implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Point_2 and Reservoir implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack and Queue implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Student implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
     </ClCompile>
     <ClCompile Include="Using a binary tree.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Use of something</Filter>
+    </ClCompile>
+    <ClCompile Include="Using a template.cpp">
+      <Filter>Source Files\Use of something</Filter>
     </ClCompile>
     <ClCompile Include="Using inheritance.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Use of something</Filter>
+    </ClCompile>
+    <ClCompile Include="h_w.cpp">
+      <Filter>Source Files\h_w</Filter>
+    </ClCompile>
+    <ClCompile Include="h_w_4.cpp">
+      <Filter>Source Files\h_w</Filter>
     </ClCompile>
     <ClCompile Include="h_w_5.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\h_w</Filter>
+    </ClCompile>
+    <ClCompile Include="h_w_3.cpp">
+      <Filter>Source Files\h_w</Filter>
     </ClCompile>
     <ClCompile Include="h_w_6.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\h_w</Filter>
+    </ClCompile>
+    <ClCompile Include="h_w_2.cpp">
+      <Filter>Source Files\h_w</Filter>
+    </ClCompile>
+    <ClCompile Include="Book implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files\Class definition\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="List.cpp">
+      <Filter>Source Files\Class definition\List</Filter>
+    </ClCompile>
+    <ClCompile Include="List_2.cpp">
+      <Filter>Source Files\Class definition\List</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue.cpp">
+      <Filter>Source Files\Class definition\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="QueuePriority.cpp">
+      <Filter>Source Files\Class definition\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="QueuePriority_2.cpp">
+      <Filter>Source Files\Class definition\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="Lift.cpp">
+      <Filter>Source Files\Class definition\Lift</Filter>
+    </ClCompile>
+    <ClCompile Include="MedalTable.cpp">
+      <Filter>Source Files\Class definition\MedalRow and MedalTable</Filter>
+    </ClCompile>
+    <ClCompile Include="MedalRow.cpp">
+      <Filter>Source Files\Class definition\MedalRow and MedalTable</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Source Files\Class definition\Point</Filter>
+    </ClCompile>
+    <ClCompile Include="Point_2.cpp">
+      <Filter>Source Files\Class definition\Point</Filter>
+    </ClCompile>
+    <ClCompile Include="Person.cpp">
+      <Filter>Source Files\Class definition\Person</Filter>
+    </ClCompile>
+    <ClCompile Include="Person_2.cpp">
+      <Filter>Source Files\Class definition\Person</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>Source Files\Class definition\String</Filter>
+    </ClCompile>
+    <ClCompile Include="Date.cpp">
+      <Filter>Source Files\Class definition\Date</Filter>
+    </ClCompile>
+    <ClCompile Include="Overcoat.cpp">
+      <Filter>Source Files\Class definition\Overcoat</Filter>
+    </ClCompile>
+    <ClCompile Include="Company.cpp">
+      <Filter>Source Files\Class definition\Company</Filter>
+    </ClCompile>
+    <ClCompile Include="Complex.cpp">
+      <Filter>Source Files\Class definition\Complex</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>Source Files\Class definition\Circle</Filter>
+    </ClCompile>
+    <ClCompile Include="Airplane.cpp">
+      <Filter>Source Files\Class definition\Airplane</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Source Files\Class definition\Rect</Filter>
+    </ClCompile>
+    <ClCompile Include="Reservoir.cpp">
+      <Filter>Source Files\Class definition\Reservoir</Filter>
+    </ClCompile>
+    <ClCompile Include="Fraction.cpp">
+      <Filter>Source Files\Class definition\Fraction</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Source Files\Class definition\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>Source Files\Class definition\Student</Filter>
+    </ClCompile>
+    <ClCompile Include="Stor.cpp">
+      <Filter>Source Files\Class definition\Stor</Filter>
+    </ClCompile>
+    <ClCompile Include="Task.cpp">
+      <Filter>Source Files\Class definition\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="String implementation.cpp">
+      <Filter>Source Files\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Worker.cpp">
+      <Filter>Source Files\Class definition\Worker</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

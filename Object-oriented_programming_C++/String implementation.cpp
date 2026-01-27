@@ -1,9 +1,9 @@
 ﻿#include "String.h"
 #include <iostream>
 
-//#define TEST
+//#define MAIN
 
-#ifdef TEST
+#ifdef MAIN
 int main() 
 {
     setlocale(LC_ALL, "");
@@ -41,4 +41,4 @@ int main()
     s5.print();
 }
 
-#endif //TEST
+#endif //MAIN
