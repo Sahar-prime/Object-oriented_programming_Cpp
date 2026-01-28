@@ -150,6 +150,49 @@ public:
 	}
 };
 
+class DomesticAnimal
+{
+protected:
+	char name[20];
+public:
+	DomesticAnimal(const char* name)
+	{
+		strcpy(this->name, name);
+	}
+	virtual void Sound() const = 0;
+	virtual void Name() const
+	{
+		std::cout << "Имя: " << name << std::endl;
+	}
+	virtual void Type() const = 0;
+};
+class Dog : public DomesticAnimal
+{
+public:
+	Dog(const char* name) : DomesticAnimal(name) {}
+	void Sound() const 
+	{
+		std::cout << name << " говорит: Гав-гав!" << std::endl;
+	}
+	void Type() const
+	{
+		std::cout << "Подвид: Собака" << std::endl;
+	}
+};
+class Cat : public DomesticAnimal
+{
+public:
+	Cat(const char* name) : DomesticAnimal(name) {}
+	void Sound() const 
+	{
+		std::cout << name << " говорит: Мяу!" << std::endl;
+	}
+	void Type() const 
+	{
+		std::cout << "Подвид: Кошка" << std::endl;
+	}
+};
+
 #ifdef MAIN
 int main() 
 {
@@ -176,7 +219,6 @@ int main()
 	{
 		arr[i]->show();
 	}
-
 //Weapon
 	Weapon* w[3] = 
 	{ 
@@ -195,6 +237,24 @@ int main()
 	else
 	{
 		w[user - 1]->damage();
+	}
+	std::cout << std::endl;
+//DomesticAnimal
+	DomesticAnimal* d[] =
+	{
+		new Dog("Бобик"),
+		new Cat("Мурка")
+	};
+	d[0]->Name();
+	d[0]->Type();
+	d[0]->Sound();
+	std::cout << std::endl;
+	d[1]->Name();
+	d[1]->Type();
+	d[1]->Sound();
+	for (int i = 0; i < 1; ++i)
+	{
+		delete d[i];
 	}
 }
 #endif //MAIN

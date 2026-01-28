@@ -6,18 +6,13 @@
 class Employer
 {
 protected:
-    char* name;
+    char name[20];
 public:
     Employer(const char* name)
     {
-        this->name = new char[strlen(name) + 1];
         strcpy(this->name, name);
     }
     virtual void Print() const = 0;
-    virtual ~Employer()
-    {
-        delete[] name;
-    }
 };
 class President : public Employer
 {
