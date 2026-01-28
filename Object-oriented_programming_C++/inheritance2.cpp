@@ -120,10 +120,7 @@ public:
 	{
 		strcpy(this->name, name);
 	}
-	virtual void damage() const
-	{
-		std::cout << "Нанесение урона\n";
-	}
+	virtual void damage() const = 0;
 };
 class Gun : public Weapon
 {
