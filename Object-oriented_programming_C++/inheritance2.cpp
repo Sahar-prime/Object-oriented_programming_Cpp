@@ -237,6 +237,158 @@ public:
 	}
 };
 
+////1
+//class Figure
+//{
+//public:
+//	virtual double square() const = 0;
+//};
+//class Rectangle : public Figure 
+//{
+//	double a, b;
+//public:
+//	Rectangle(double a, double b) :
+//		a(a), 
+//		b(b) {}
+//	double square() const
+//	{
+//		return a * b; 
+//	}
+//};
+//class Circle : public Figure
+//{
+//	double r;
+//public:
+//	Circle(double r) : r(r) {}
+//	double square() const
+//	{
+//		return 3.14 * r * r; 
+//	}
+//};
+//class Right_triangle : public Figure
+//{
+//	double a, b;
+//public:
+//	Right_triangle(double a, double b) :
+//		a(a),
+//		b(b) {}
+//	double square() const
+//	{
+//		return 0.5 * a * b; 
+//	}
+//};
+//class Trapezoid : public Figure 
+//{
+//	double a, b, h;
+//public:
+//	Trapezoid(double a, double b, double h) :
+//		a(a),
+//		b(b),
+//		h(h) {}
+//	double square() const
+//	{
+//		return 0.5 * (a + b) * h;
+//	}
+//};
+
+////2
+//class Figure 
+//{
+//public:
+//	virtual double square() const = 0;
+//};
+//class Rectangle : public Figure 
+//{
+//protected:
+//	double a, b;
+//public:
+//	Rectangle(double s1, double s2) : a(s1), b(s2) {}
+//	double square() const
+//	{
+//		return a * b;
+//	}
+//};
+//class Right_triangle : public Rectangle 
+//{
+//public:
+//	Right_triangle(double l1, double l2) : Rectangle(l1, l2) {}
+//	double square() const
+//	{
+//		return 0.5 * Rectangle::square();
+//	}
+//};
+//class Circle : public Figure
+//{
+//private:
+//	double r;
+//public:
+//	Circle(double radius) : r(radius) {}
+//	virtual double square() const
+//	{
+//		return 3.14 * r * r;
+//	}
+//};
+//class Trapezoid : public Figure
+//{
+//private:
+//	double a, b, h;
+//public:
+//	Trapezoid(double b1, double b2, double height) : a(b1), b(b2), h(height) {}
+//	double square() const 
+//	{
+//		return 0.5 * (a + b) * h;
+//	}
+//};
+
+////3
+//class Figure 
+//{
+//public:
+//	virtual double square() const = 0;
+//};
+//class Rectangle : public Figure 
+//{
+//protected:
+//	double a, b;
+//public:
+//	Rectangle(double s1, double s2) : a(s1), b(s2) {}
+//	double square() const 
+//	{
+//		return a * b;
+//	}
+//};
+//class Right_triangle : public Rectangle
+//{
+//public:
+//	Right_triangle(double l1, double l2) : Rectangle(l1, l2) {}
+//	double square() const 
+//	{
+//		return 0.5 * Rectangle::square();
+//	}
+//};
+//class Trapezoid : public Right_triangle 
+//{
+//private:
+//	double h;
+//public:
+//	Trapezoid(double b1, double b2, double height) : Right_triangle(b1 + b2, height) {}
+//	double square() const 
+//	{
+//		return Right_triangle::square();
+//	}
+//};
+//class Circle : public Figure 
+//{
+//private:
+//	double r;
+//public:
+//	Circle(double radius) : r(radius) {}
+//	double square() const 
+//	{
+//		return 3.14159 * r * r;
+//	}
+//};
+
 #ifdef MAIN
 int main() 
 {
@@ -304,5 +456,6 @@ int main()
 	OneStr* ptr = new TwoStr{ "test", "qwerty" };
 	ptr->Show();
 	delete ptr;
+//Figure
 }
 #endif //MAIN
