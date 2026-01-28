@@ -5,10 +5,7 @@
 class Employer
 {
 public:
-    virtual void Print() const 
-    {
-        std::cout << "Employer: Базовый служащий.\n";
-    }
+    virtual void Print() const = 0;
 };
 class President : public Employer
 {
