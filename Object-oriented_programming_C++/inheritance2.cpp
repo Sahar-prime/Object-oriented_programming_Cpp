@@ -193,6 +193,50 @@ public:
 	}
 };
 
+class OneStr 
+{
+protected:
+	char* str;
+public:
+	OneStr(const char* str) :
+		str{ new char[strlen(str) + 1] }
+	{
+		strcpy(this -> str, str);
+		std::cout << "Отработал констуктор для OneStr\n";
+	}
+	virtual void Show() const 
+	{
+		std::cout << str << std::endl;
+	}
+	virtual ~OneStr()
+	{
+		delete[]str;
+		std::cout << "Отработал деструктор для OneStr\n";
+	}
+};
+class TwoStr: public OneStr
+{
+protected:
+	char* str2;
+public:
+	TwoStr(const char* str, const char* str2) :
+		str2{ new char[strlen(str2) + 1] },
+		OneStr{str}
+	{
+		strcpy(this->str2, str2);
+		std::cout << "Отработал констуктор для TwoStr\n";
+	}
+	virtual void Show() const
+	{
+		std::cout << str << " " << str2 << std::endl;
+	}
+	virtual ~TwoStr()
+	{
+		delete[]str2;
+		std::cout << "Отработал деструктор для TwoStr\n";
+	}
+};
+
 #ifdef MAIN
 int main() 
 {
@@ -240,21 +284,25 @@ int main()
 	}
 	std::cout << std::endl;
 //DomesticAnimal
-	DomesticAnimal* d[] =
+	DomesticAnimal* d[2] =
 	{
 		new Dog("Бобик"),
 		new Cat("Мурка")
 	};
-	d[0]->Name();
-	d[0]->Type();
-	d[0]->Sound();
-	std::cout << std::endl;
-	d[1]->Name();
-	d[1]->Type();
-	d[1]->Sound();
+	for (int i = 0; i < 2; ++i)
+	{
+		d[i]->Name();
+		d[i]->Type();
+		d[i]->Sound();
+		std::cout << std::endl;
+	}
 	for (int i = 0; i < 1; ++i)
 	{
 		delete d[i];
 	}
+//Str
+	OneStr* ptr = new TwoStr{ "test", "qwerty" };
+	ptr->Show();
+	delete ptr;
 }
 #endif //MAIN
