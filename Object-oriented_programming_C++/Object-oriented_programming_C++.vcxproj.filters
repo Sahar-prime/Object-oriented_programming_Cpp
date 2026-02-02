@@ -288,6 +288,9 @@
     <ClCompile Include="h_w_7.cpp">
       <Filter>Source Files\h_w</Filter>
     </ClCompile>
+    <ClCompile Include="h_w_8.cpp">
+      <Filter>Source Files\h_w</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">
