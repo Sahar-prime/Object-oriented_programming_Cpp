@@ -8,53 +8,104 @@
 #ifdef MAIN
 int main() 
 {
-    setlocale(LC_ALL, "Russian");
+    setlocale(LC_ALL, "");
 
-    // Новые переменные для гибкости
-    std::string fileName, fileExt, content;
-    std::cout << "Введите имя файла (без расширения): ";
-    std::cin >> fileName;
-    std::cout << "Введите расширение (например, txt): ";
-    std::cin >> fileExt;
-    std::cin.ignore(); // Очистка буфера
-    std::cout << "Введите содержимое файла: ";
-    std::getline(std::cin, content);
+    system("mkdir \"C:\\Users\\user\\Рабочий стол\\User\" 2> nul");
+    std::string path = "C:\\Users\\user\\Рабочий стол\\User\\", cmd, ext, name, buf;
+    std::cout << "Все команды: add, rename, copy, size, delete, exit" << std::endl;
 
-    // СОЗДАНИЕ ПАПКИ через системную команду Windows
-    system("mkdir \"C:\\Users\\user\\Рабочий стол\\Test\" 2> nul");
-
-    std::string fullPath = "C:\\Users\\user\\Рабочий стол\\Test\\" + fileName + "." + fileExt;
-    const char* path = fullPath.c_str();
-
-    FILE* file = fopen(path, "w");
-    if (file != NULL) 
+    while (true) 
     {
-        fprintf(file, "%s", content.c_str()); // Запись введенного контента
-        fclose(file);
-        printf("Файл создан: %s\n", path);
-    }
-    else 
-    {
-        perror("Ошибка открытия файла");
-    }
-    char c[50];
-    std::cout << "Введите 'delete file' для удаления или любой текст для сохранения: ";
-    std::cin.getline(c, 50);
+        std::cout << ">";
+        std::cin >> cmd;
+        if (cmd == "exit") break;
 
-    if (strcmp(c, "delete file") == 0) 
-    {
-        if (remove(path) == 0)
+        if (cmd == "add")
         {
-            std::cout << "Файл успешно удален!" << std::endl;
+            std::cout << "Имя файла: "; std::cin >> name;
+            std::cout << "Расширение (без точки): "; std::cin >> ext;
+
+            std::string full = path + name + "." + ext;
+            FILE* f = fopen(full.c_str(), "a");
+            if (f) 
+            {
+                std::cout << "Текст: ";
+                std::cin.ignore();
+                std::getline(std::cin, buf);
+                fprintf(f, "%s\n", buf.c_str());
+                fclose(f);
+                std::cout << "Записано в " << name << "." << ext << "\n";
+            }
         }
-        else 
+        else if (cmd == "rename") 
         {
-            perror("Ошибка при удалении файла");
+            std::string oldFull, newName, newExt;
+            std::cout << "Имя файла для переименования (с расширением): "; std::cin >> name;
+            oldFull = path + name;
+
+            std::cout << "Новое имя: "; std::cin >> newName;
+            std::cout << "Новое расширение: "; std::cin >> newExt;
+
+            std::string newFull = path + newName + "." + newExt;
+
+            if (rename(oldFull.c_str(), newFull.c_str()) == 0) 
+            {
+                std::cout << "Файл успешно переименован в " << newName << "." << newExt << "\n";
+            }
+            else 
+            {
+                perror("Ошибка при переименовании");
+            }
         }
-    }
-    else
-    {
-        std::cout << "Файл сохранен на рабочем столе. Вы ввели: " << c << std::endl;
+        else if (cmd == "copy")
+        {
+            std::cout << "Файл (с расширением): "; std::cin >> name;
+            std::string target, targetExt;
+            std::cout << "Имя копии: "; std::cin >> target;
+            std::cout << "Расширение копии: "; std::cin >> targetExt;
+
+            FILE* s = fopen((path + name).c_str(), "rb");
+            FILE* d = fopen((path + target + "." + targetExt).c_str(), "wb");
+            if (s && d) 
+            {
+                char ch;
+                while (fread(&ch, 1, 1, s)) fwrite(&ch, 1, 1, d);
+                fclose(s); fclose(d);
+                std::cout << "Копия создана.\n";
+            }
+            else 
+            {
+                std::cout << "Ошибка: файл не найден.\n";
+            }
+        }
+        else if (cmd == "size")
+        {
+            std::cout << "Файл (с расширением): ";
+            std::cin >> name;
+            FILE* f = fopen((path + name).c_str(), "rb"); // Открываем в бинарном режиме
+            if (f) 
+            {
+                fseek(f, 0, SEEK_END);    // Переходим в конец файла
+                long size = ftell(f);     // Получаем текущую позицию (это и есть размер)
+                fclose(f);
+                std::cout << "Размер: " << size << " байт\n";
+            }
+            else
+            {
+                perror("Ошибка");
+            }
+        }
+        else if (cmd == "delete")
+        {
+            std::cout << "Файл для удаления (с расширением): ";
+            std::cin >> name;
+            if (remove((path + name).c_str()) == 0) std::cout << "Удалено.\n";
+            else perror("Ошибка");
+        }
+        else if (cmd == "help")
+        {
+            std::cout << "Все команды: add, rename, copy, size, delete, exit" << std::endl;
+        }
     }
 }
 #endif //MAIN
