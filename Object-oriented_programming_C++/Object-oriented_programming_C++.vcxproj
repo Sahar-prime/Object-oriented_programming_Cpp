@@ -155,6 +155,7 @@
     <ClCompile Include="List_2.cpp" />
     <ClCompile Include="inheritance2.cpp" />
     <ClCompile Include="inheritance.cpp" />
+    <ClCompile Include="inheritance3.cpp" />
     <ClCompile Include="Using a binary tree.cpp" />
     <ClCompile Include="QueuePriority.cpp" />
     <ClCompile Include="QueuePriority_2.cpp" />

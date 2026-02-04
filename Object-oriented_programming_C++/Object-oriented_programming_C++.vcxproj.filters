@@ -291,6 +291,9 @@
     <ClCompile Include="h_w_8.cpp">
       <Filter>Source Files\h_w</Filter>
     </ClCompile>
+    <ClCompile Include="inheritance3.cpp">
+      <Filter>Source Files\Inheritance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">
