@@ -156,10 +156,11 @@
     <ClCompile Include="inheritance2.cpp" />
     <ClCompile Include="inheritance.cpp" />
     <ClCompile Include="inheritance3.cpp" />
+    <ClCompile Include="template1.cpp" />
     <ClCompile Include="Using a binary tree.cpp" />
     <ClCompile Include="QueuePriority.cpp" />
     <ClCompile Include="QueuePriority_2.cpp" />
-    <ClCompile Include="Using a template.cpp" />
+    <ClCompile Include="template.cpp" />
     <ClCompile Include="Stack and Queue implementation.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Stack.cpp" />

@@ -103,6 +103,9 @@
     <Filter Include="Source Files\Inheritance">
       <UniqueIdentifier>{d74e1a7b-b025-4f9d-a7b3-c5522ecdcee0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Template">
+      <UniqueIdentifier>{622e3e12-cae3-404c-b7f1-8db44a3cff93}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Array.cpp">
@@ -279,9 +282,6 @@
     <ClCompile Include="inheritance2.cpp">
       <Filter>Source Files\Inheritance</Filter>
     </ClCompile>
-    <ClCompile Include="Using a template.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Using a binary tree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -293,6 +293,12 @@
     </ClCompile>
     <ClCompile Include="inheritance3.cpp">
       <Filter>Source Files\Inheritance</Filter>
+    </ClCompile>
+    <ClCompile Include="template.cpp">
+      <Filter>Source Files\Template</Filter>
+    </ClCompile>
+    <ClCompile Include="template1.cpp">
+      <Filter>Source Files\Template</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
