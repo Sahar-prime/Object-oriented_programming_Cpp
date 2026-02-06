@@ -147,9 +147,162 @@ public:
     }
 };
 
+template <class T>
+class Point 
+{
+private:
+    T x;
+    T y;
+public:
+    Point(T x, T y) : x(x), y(y) {}
+    T getX() const
+    {
+        return x;
+    }
+    T getY() const 
+    {
+        return y; 
+    }
+    void setX(T newX) 
+    { 
+        x = newX; 
+    }
+    void setY(T newY)
+    {
+        y = newY;
+    }
+    void show() const
+    {
+        std::cout << "(" << x << ", " << y << ")" << std::endl;
+    }
+};
+template <class T>
+class Shape
+{
+protected:
+    Point<T> start;
+public:
+    Shape(Point<T> start) : start(start) {}
+    virtual void show() const = 0;
+};
+template <class T, class T2, class T3>
+class Rectangle : public Shape<T>
+{
+private:
+    T2 width;
+    T3 height;
+public:
+    Rectangle(Point<T> start, T2 width, T3 height) : Shape<T>(start), width(width), height(height) {}
+    void show() const
+    {
+        std::cout << "Rectangle with width " << width << " and height " << height << " starts at: ";
+        this->start.show();
+    }
+    T2 getWidth() const
+    {
+        return width;
+    }
+    T3 getHeight() const
+    {
+        return height;
+    }
+    void setWidth(T newWidth)
+    {
+        width = newWidth;
+    }
+    void setHeight(T newHeight)
+    {
+        height = newHeight;
+    }
+};
+template <class T, class T2>
+class Square : public Rectangle<T, T2, T2>
+{
+public:
+    Square(Point<T> start, T2 side) :
+        Rectangle<T, T2, T2>(start, side, side) {}
+    void show() const
+    {
+        std::cout << "Square with side " << this->getWidth() << " starts at: ";
+        this->start.show();
+    }
+    void setWidth(T2 newSide)
+    {
+        this->Rectangle<T, T2, T2>::setWidth(newSide);
+        this->Rectangle<T, T2, T2>::setHeight(newSide);
+    }
+    void setHeight(T2 newSide)
+    {
+        this->Rectangle<T, T2, T2>::setWidth(newSide);
+        this->Rectangle<T, T2, T2>::setHeight(newSide);
+    }
+};
+template <class T, class T2, class T3>
+class Ellipse : public Shape<T>
+{
+private:
+    T2 semiMajorAxis;
+    T3 semiMinorAxis;
+public:
+    Ellipse(Point<T> start, T2 semiMajorAxis, T3 semiMinorAxis) :
+        Shape<T>(start),
+        semiMajorAxis(semiMajorAxis),
+        semiMinorAxis(semiMinorAxis) {}
+    void show() const
+    {
+        std::cout << "Ellipse with semi-major axis " << semiMajorAxis
+            << " and semi-minor axis " << semiMinorAxis << " starts at: ";
+        this->start.show();
+    }
+    T2 getSemiMajorAxis() const 
+    {
+        return semiMajorAxis;
+    }
+    T3 getSemiMinorAxis() const 
+    {
+        return semiMinorAxis;
+    }
+    void setSemiMajorAxis(T2 newSemiMajorAxis) 
+    { 
+        semiMajorAxis = newSemiMajorAxis; 
+    }
+    void setSemiMinorAxis(T3 newSemiMinorAxis) 
+    {
+        semiMinorAxis = newSemiMinorAxis; 
+    }
+};
+template <class T, class T2>
+class Circle : public Ellipse<T, T2, T2>
+{
+public:
+    Circle(Point<T> start, T2 radius) : 
+        Ellipse<T, T2, T2>(start, radius, radius) {}
+    void show() const 
+    {
+        std::cout << "Circle with radius " << this->getSemiMajorAxis() << " starts at: ";
+        this->start.show();
+    }
+    void setSemiMajorAxis(T2 newRadius) 
+    {
+        this->Ellipse<T, T2, T2>::setSemiMajorAxis(newRadius);
+        this->Ellipse<T, T2, T2>::setSemiMinorAxis(newRadius);
+    }
+    void setSemiMinorAxis(T2 newRadius) 
+    {
+        this->Ellipse<T, T2, T2>::setSemiMajorAxis(newRadius);
+        this->Ellipse<T, T2, T2>::setSemiMinorAxis(newRadius);
+    }
+};
+
 #ifdef MAIN
 int main()
 {
+//Pair->Trio
+    Pair<int, std::string> pair(1, "Apple");
+    pair.show();
+    Trio<int, std::string, double> trio(2, "Orange", 3.14);
+    trio.show();
+//base->child->child2
     base<int, float> b(10, 20.5);
     std::cout << "Base class:" << std::endl;
     b.show();
@@ -163,5 +316,24 @@ int main()
     child2<int, float, char, double, bool, std::string> c2(60, 70.5, 'B', 80.75, true, "Hello");
     std::cout << "Child2 class:" << std::endl;
     c2.show();
+    std::cout << std::endl;
+//Point->Shape:
+  //-Rectangle->Square
+  //-Ellipse->Circle
+    Point<int> p1(10, 20);
+    // Прямоугольник и Квадрат
+    Rectangle<int, int, int> rect(p1, 100, 50);
+    rect.show();
+    Square<int, int> sq(p1, 40);
+    sq.show();
+    sq.setWidth(60); // Обновит и ширину, и высоту
+    sq.show();
+    // Эллипс и Круг
+    Ellipse<int, double, double> ell(p1, 15.5, 10.0);
+    ell.show();
+    Circle<int, double> circ(p1, 25.0);
+    circ.show();
+    circ.setSemiMajorAxis(30.0); // Обновит радиус
+    circ.show();
 }
 #endif //MAIN
