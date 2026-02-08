@@ -41,7 +41,7 @@ void List::DelHead()
 
 	delete temp; //Очищаем память
 }
-void List::DelTail() 
+void List::DelTail_1() 
 {
 	if (tail == nullptr) return;
 
@@ -59,6 +59,28 @@ void List::DelTail()
 	delete tail; 
 	tail = temp; 
 	tail->next = nullptr;
+}
+void List::DelTail() //функция для удаления как из стека (с конца списка)
+{
+	// 1. Если список пуст — делать нечего
+	if (head == nullptr) return;
+	// 2. Если в списке всего один элемент
+	if (head == tail)
+	{
+		delete head;
+		head = tail = nullptr;
+		return;
+	}
+	// 3. Если элементов > 1, ищем предпоследний (тот, что указывает на tail)
+	Node* temp = head;
+	while (temp->next != tail)
+	{
+		temp = temp->next;
+	}
+	// 4. Удаляем последний, переназначаем tail на текущий (предпоследний)
+	delete tail;
+	tail = temp;
+	tail->next = nullptr; // Теперь это новый конец
 }
 void List::Print()
 {

@@ -12,6 +12,7 @@ public:
 	~List();
 	void AddTail(int x);
 	void DelHead();
+	void DelTail_1();
 	void DelTail();
 	void Print();
 	int getSize();
