@@ -149,6 +149,7 @@
     <ClCompile Include="h_w_6.cpp" />
     <ClCompile Include="h_w_7.cpp" />
     <ClCompile Include="h_w_8.cpp" />
+    <ClCompile Include="h_w_9.cpp" />
     <ClCompile Include="Lift.cpp" />
     <ClCompile Include="List and List_2 implementation.cpp" />
     <ClCompile Include="List.cpp" />
