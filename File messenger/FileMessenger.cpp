@@ -62,31 +62,47 @@ void FileManager::renameFile()
 
 void FileManager::copyFile()
 {
-    std::string name, target, targetExt;
+    std::string name, target;
     std::cout << "Файл (с расширением): ";
     std::cin >> name;
-    std::cout << "Имя копии: ";
-    std::cin >> target;
-    std::cout << "Расширение копии: ";
-    std::cin >> targetExt;
 
-    FILE* source = fopen((path + name).c_str(), "rb");
-    FILE* dest = fopen((path + target + "." + targetExt).c_str(), "wb");
+    // Определяем расширение исходного файла
+    size_t dotPos = name.find_last_of('.');
+    if (dotPos == std::string::npos)
+    {
+        std::cerr << "Ошибка: неверный формат имени файла.\n";
+        return;
+    }
+
+    std::string ext = name.substr(dotPos); // расширение с точкой
+    std::cout << "Новое имя файла (без расширения): ";
+    std::cin >> target;
+
+    // Формируем пути
+    std::string sourcePath = path + name;
+    std::string destPath = path + target + ext;
+
+    // Копирование
+    FILE* source = fopen(sourcePath.c_str(), "rb");
+    FILE* dest = fopen(destPath.c_str(), "wb");
 
     if (source && dest)
     {
-        char ch;
-        while (fread(&ch, 1, 1, source))
+        char buffer[1024];
+        size_t bytesRead;
+        while ((bytesRead = fread(buffer, 1, sizeof(buffer), source)) > 0) 
         {
-            fwrite(&ch, 1, 1, dest);
+            fwrite(buffer, 1, bytesRead, dest);
         }
         fclose(source);
         fclose(dest);
-        std::cout << "Копия создана.\n";
+        std::cout << "Файл скопирован как: " << target << ext << "\n";
     }
-    else
+    else 
     {
-        std::cerr << "Ошибка: файл не найден.\n";
+        std::cerr << "Ошибка: не удалось открыть файл.\n";
+        if (source) fclose(source);
+        if (dest) fclose(dest);
     }
 }
 
