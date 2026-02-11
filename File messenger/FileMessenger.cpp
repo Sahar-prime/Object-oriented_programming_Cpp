@@ -1,17 +1,17 @@
 ﻿#include "FileMessenger.h"
 
-FileManager::FileManager()
+FileMessenger::FileMessenger()
 {
     path = "C:\\Users\\user\\Рабочий стол\\User\\";
     system("mkdir \"C:\\Users\\user\\Рабочий стол\\User\" 2> nul");
 }
 
-void FileManager::printHelp()
+void FileMessenger::printHelp()
 {
-    std::cout << "Все команды: add, rename, copy, size, delete, exit" << std::endl;
+    std::cout << "Все команды: add, rename, copy, size, delete, show, show_all, exit" << std::endl;
 }
 
-void FileManager::addFile()
+void FileMessenger::addFile()
 {
     std::string name, ext, buf;
     std::cout << "Имя файла: ";
@@ -36,13 +36,22 @@ void FileManager::addFile()
     }
 }
 
-void FileManager::renameFile()
+void FileMessenger::renameFile()
 {
     std::string name, newName, newExt;
     std::cout << "Имя файла для переименования (с расширением): ";
     std::cin >> name;
     std::string oldFullPath = path + name;
-
+    
+    // Проверка существования файла через fopen
+    FILE* file = fopen(oldFullPath.c_str(), "r");
+    if (!file)
+    {
+        std::cerr << "Ошибка: файл не существует или недоступен.\n";
+        return;
+    }
+    fclose(file);
+    
     std::cout << "Новое имя: ";
     std::cin >> newName;
     std::cout << "Новое расширение: ";
@@ -60,11 +69,20 @@ void FileManager::renameFile()
     }
 }
 
-void FileManager::copyFile()
+void FileMessenger::copyFile()
 {
     std::string name, target;
     std::cout << "Файл (с расширением): ";
     std::cin >> name;
+    std::string FullPath = path + name;
+
+    FILE* file = fopen(FullPath.c_str(), "r");
+    if (!file)
+    {
+        std::cerr << "Ошибка: файл не существует или недоступен.\n";
+        return;
+    }
+    fclose(file);
 
     // Определяем расширение исходного файла
     size_t dotPos = name.find_last_of('.');
@@ -106,7 +124,7 @@ void FileManager::copyFile()
     }
 }
 
-void FileManager::getFileSize()
+void FileMessenger::getFileSize()
 {
     std::string name;
     std::cout << "Файл (с расширением): ";
@@ -126,7 +144,7 @@ void FileManager::getFileSize()
     }
 }
 
-void FileManager::deleteFile()
+void FileMessenger::deleteFile()
 {
     std::string name;
     std::cout << "Файл для удаления (с расширением): ";
@@ -142,7 +160,7 @@ void FileManager::deleteFile()
     }
 }
 
-void FileManager::run()
+void FileMessenger::run()
 {
     std::string cmd;
     printHelp();
@@ -174,9 +192,20 @@ void FileManager::run()
         {
             deleteFile();
         }
+        else if (cmd == "show_all") 
+        {
+            showUserFolderContent();
+        }
         else if (cmd == "help")
         {
             printHelp();
         }
     }
+}
+
+void FileMessenger::showUserFolderContent()
+{
+    std::cout << "Список файлов в папке User:\n";
+    std::string command = "dir \"" + path + "\" /b";
+    system(command.c_str());
 }

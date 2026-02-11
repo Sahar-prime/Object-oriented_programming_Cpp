@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string>
 
-class FileManager
+class FileMessenger
 {
 private:
     std::string path;
@@ -15,8 +15,8 @@ private:
     void copyFile();
     void getFileSize();
     void deleteFile();
-
+    void showUserFolderContent();
 public:
-    FileManager();
+    FileMessenger();
     void run();
 };

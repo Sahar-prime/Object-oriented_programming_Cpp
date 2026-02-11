@@ -8,7 +8,7 @@ int main()
 {
     setlocale(LC_ALL, "");
 
-    FileManager manager;
+    FileMessenger manager;
     manager.run();
     return 0;
 }
