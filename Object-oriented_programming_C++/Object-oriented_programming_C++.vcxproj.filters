@@ -306,7 +306,7 @@
     <ClCompile Include="Creating and reading files.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Using try, catch, throw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
