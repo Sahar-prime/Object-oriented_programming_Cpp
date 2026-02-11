@@ -74,54 +74,48 @@ void FileMessenger::copyFile()
     std::string name, target;
     std::cout << "Файл (с расширением): ";
     std::cin >> name;
-    std::string FullPath = path + name;
 
-    FILE* file = fopen(FullPath.c_str(), "r");
-    if (!file)
+    std::string sourcePath = path + name;
+    FILE* source = fopen(sourcePath.c_str(), "rb");
+    if (!source)
     {
         std::cerr << "Ошибка: файл не существует или недоступен.\n";
         return;
     }
-    fclose(file);
 
-    // Определяем расширение исходного файла
+    // Определяем расширение
     size_t dotPos = name.find_last_of('.');
     if (dotPos == std::string::npos)
     {
         std::cerr << "Ошибка: неверный формат имени файла.\n";
+        fclose(source);
         return;
     }
+    std::string ext = name.substr(dotPos);
 
-    std::string ext = name.substr(dotPos); // расширение с точкой
     std::cout << "Новое имя файла (без расширения): ";
     std::cin >> target;
-
-    // Формируем пути
-    std::string sourcePath = path + name;
     std::string destPath = path + target + ext;
 
     // Копирование
-    FILE* source = fopen(sourcePath.c_str(), "rb");
     FILE* dest = fopen(destPath.c_str(), "wb");
-
-    if (source && dest)
+    if (!dest)
     {
-        char buffer[1024];
-        size_t bytesRead;
-        while ((bytesRead = fread(buffer, 1, sizeof(buffer), source)) > 0) 
-        {
-            fwrite(buffer, 1, bytesRead, dest);
-        }
+        std::cerr << "Ошибка: не удалось создать копию.\n";
         fclose(source);
-        fclose(dest);
-        std::cout << "Файл скопирован как: " << target << ext << "\n";
+        return;
     }
-    else 
+
+    char buffer[1024];
+    size_t bytesRead;
+    while ((bytesRead = fread(buffer, 1, sizeof(buffer), source)) > 0)
     {
-        std::cerr << "Ошибка: не удалось открыть файл.\n";
-        if (source) fclose(source);
-        if (dest) fclose(dest);
+        fwrite(buffer, 1, bytesRead, dest);
     }
+
+    fclose(source);
+    fclose(dest);
+    std::cout << "Файл скопирован как: " << target << ext << "\n";
 }
 
 void FileMessenger::getFileSize()
