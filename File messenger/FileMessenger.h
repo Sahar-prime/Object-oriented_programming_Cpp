@@ -3,8 +3,6 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
-#include <io.h>
-#include <direct.h>
 
 class FileMessenger
 {

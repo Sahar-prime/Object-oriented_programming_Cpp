@@ -8,7 +8,7 @@ FileMessenger::FileMessenger()
 
 void FileMessenger::printHelp()
 {
-    std::cout << "Все команды: add, rename, copy, size, delete, show, show_all, exit" << std::endl;
+    std::cout << "Все команды: add, rename, copy, size, show_all, delete, exit" << std::endl;
 }
 
 void FileMessenger::addFile()
