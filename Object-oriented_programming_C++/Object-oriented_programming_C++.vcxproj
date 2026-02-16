@@ -158,6 +158,7 @@
     <ClCompile Include="inheritance.cpp" />
     <ClCompile Include="inheritance3.cpp" />
     <ClCompile Include="Creating and reading files.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Using try, catch, throw.cpp" />
     <ClCompile Include="template1.cpp" />
     <ClCompile Include="Using a binary tree.cpp" />
