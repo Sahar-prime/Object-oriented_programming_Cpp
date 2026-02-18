@@ -309,7 +309,7 @@
     <ClCompile Include="Using try, catch, throw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Using vector list map multimap.cpp">
+    <ClCompile Include="Using vector, list, map, multimap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="h_w_10.cpp">

@@ -159,7 +159,7 @@
     <ClCompile Include="inheritance.cpp" />
     <ClCompile Include="inheritance3.cpp" />
     <ClCompile Include="Creating and reading files.cpp" />
-    <ClCompile Include="Using vector list map multimap.cpp" />
+    <ClCompile Include="Using vector, list, map, multimap.cpp" />
     <ClCompile Include="Using namespace.cpp" />
     <ClCompile Include="Using static_cast, const_cast, dynamic_cast, reinterpret_cast.cpp" />
     <ClCompile Include="Using try, catch, throw.cpp" />
