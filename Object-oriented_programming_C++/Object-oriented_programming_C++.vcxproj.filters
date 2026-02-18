@@ -309,7 +309,16 @@
     <ClCompile Include="Using try, catch, throw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Using vector list map multimap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="h_w_10.cpp">
+      <Filter>Source Files\h_w</Filter>
+    </ClCompile>
+    <ClCompile Include="Using namespace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Using static_cast, const_cast, dynamic_cast, reinterpret_cast.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

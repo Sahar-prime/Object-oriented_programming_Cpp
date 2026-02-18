@@ -142,6 +142,7 @@
     <ClCompile Include="DynArray_2d.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="h_w.cpp" />
+    <ClCompile Include="h_w_10.cpp" />
     <ClCompile Include="h_w_2.cpp" />
     <ClCompile Include="h_w_3.cpp" />
     <ClCompile Include="h_w_4.cpp" />
@@ -158,7 +159,9 @@
     <ClCompile Include="inheritance.cpp" />
     <ClCompile Include="inheritance3.cpp" />
     <ClCompile Include="Creating and reading files.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Using vector list map multimap.cpp" />
+    <ClCompile Include="Using namespace.cpp" />
+    <ClCompile Include="Using static_cast, const_cast, dynamic_cast, reinterpret_cast.cpp" />
     <ClCompile Include="Using try, catch, throw.cpp" />
     <ClCompile Include="template1.cpp" />
     <ClCompile Include="Using a binary tree.cpp" />
