@@ -60,3 +60,12 @@ const char& String::operator[](size_t index) const
     }
     return str[index];
 }
+
+String::String(String&& s) noexcept
+{
+    length = s.length;
+    str = s.str;
+
+    s.str = nullptr;
+    s.length = 0;
+}

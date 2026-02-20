@@ -27,6 +27,8 @@ public:
 
     const char& operator[](size_t index) const;
 
+    String(String&& s) noexcept;
+
     String& operator=(const String& s)
     {
         if (this == &s) return *this;
