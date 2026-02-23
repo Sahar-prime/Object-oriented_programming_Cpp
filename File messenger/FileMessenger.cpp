@@ -1,205 +1,229 @@
 ﻿#include "FileMessenger.h"
 
-FileMessenger::FileMessenger()
+FileMessenger::FileMessenger() 
 {
     path = "C:\\Users\\user\\Рабочий стол\\User\\";
+    // Создаем базовую директорию, если её нет
     system("mkdir \"C:\\Users\\user\\Рабочий стол\\User\" 2> nul");
 }
 
-void FileMessenger::printHelp()
+// Проверка типа объекта через _findfirst из <io.h>
+bool FileMessenger::isDirectory(const std::string& fullPath)
 {
-    std::cout << "Все команды: add, rename, copy, size, show_all, delete, exit" << std::endl;
+    _finddata_t fileInfo;
+    intptr_t handle = _findfirst(fullPath.c_str(), &fileInfo);
+    if (handle != -1L) 
+    {
+        bool res = (fileInfo.attrib & _A_SUBDIR); // Проверка бита директории
+        _findclose(handle);
+        return res;
+    }
+    return false;
 }
 
-void FileMessenger::addFile()
+void FileMessenger::addAny()
 {
-    std::string name, ext, buf;
-    std::cout << "Имя файла: ";
+    int choice;
+    std::cout << "1 - Файл, 2 - Папка: ";
+    std::cin >> choice;
+    std::string name;
+    std::cout << "Имя: ";
     std::cin >> name;
-    std::cout << "Расширение (без точки): ";
-    std::cin >> ext;
 
-    std::string fullPath = path + name + "." + ext;
-    FILE* file = fopen(fullPath.c_str(), "a");
-    if (file)
+    if (choice == 1)
     {
-        std::cout << "Текст: ";
-        std::cin.ignore();
-        std::getline(std::cin, buf);
-        fprintf(file, "%s\n", buf.c_str());
-        fclose(file);
-        std::cout << "Записано в " << name << "." << ext << "\n";
+        std::string ext, buf;
+        std::cout << "Расширение (без точки): ";
+        std::cin >> ext;
+        std::string fullPath = path + name + "." + ext;
+        FILE* file = fopen(fullPath.c_str(), "a");
+        if (file)
+        {
+            std::cout << "Текст: ";
+            std::cin.ignore();
+            std::getline(std::cin, buf);
+            fprintf(file, "%s\n", buf.c_str());
+            fclose(file);
+            std::cout << "Файл создан.\n";
+        }
     }
-    else
-    {
-        std::cerr << "Ошибка при открытии файла.\n";
+    else {
+        system(("mkdir \"" + path + name + "\"").c_str());
+        std::cout << "Папка создана.\n";
     }
 }
 
-void FileMessenger::renameFile()
+void FileMessenger::renameAny()
 {
-    std::string name, newName, newExt;
-    std::cout << "Имя файла для переименования (с расширением): ";
-    std::cin >> name;
-    std::string oldFullPath = path + name;
-    
-    // Проверка существования файла через fopen
-    FILE* file = fopen(oldFullPath.c_str(), "r");
-    if (!file)
-    {
-        std::cerr << "Ошибка: файл не существует или недоступен.\n";
-        return;
-    }
-    fclose(file);
-    
-    std::cout << "Новое имя: ";
+    std::string oldName, newName;
+    std::cout << "Имя объекта (с расширением): ";
+    std::cin >> oldName;
+    std::cout << "Новое имя/путь: ";
     std::cin >> newName;
-    std::cout << "Новое расширение: ";
-    std::cin >> newExt;
 
-    std::string newFullPath = path + newName + "." + newExt;
+    // rename() в C работает и для файлов, и для папок
+    if (rename((path + oldName).c_str(), (path + newName).c_str()) == 0)
+        std::cout << "Успешно перемещено/переименовано.\n";
+    else
+        perror("Ошибка");
+}
 
-    if (rename(oldFullPath.c_str(), newFullPath.c_str()) == 0)
+void FileMessenger::copyAny()
+{
+    std::string src, dst;
+    std::cout << "Что копируем (имя): ";
+    std::cin >> src;
+    std::cout << "Имя копии: ";
+    std::cin >> dst;
+
+    std::string srcPath = path + src;
+    std::string dstPath = path + dst;
+
+    if (isDirectory(srcPath))
     {
-        std::cout << "Файл успешно переименован в " << newName << "." << newExt << "\n";
+        // Для папок используем системный xcopy (рекурсивно)
+        std::string cmd = "xcopy \"" + srcPath + "\" \"" + dstPath + "\" /E /I /H /Y > nul";
+        system(cmd.c_str());
+        std::cout << "Папка скопирована.\n";
     }
     else
     {
-        perror("Ошибка при переименовании");
+        FILE* s = fopen(srcPath.c_str(), "rb"), * d = fopen(dstPath.c_str(), "wb");
+        if (!s || !d) { std::cout << "Ошибка доступа.\n"; if (s) fclose(s); return; }
+        char buffer[4096]; size_t n;
+        while ((n = fread(buffer, 1, sizeof(buffer), s)) > 0) fwrite(buffer, 1, n, d);
+        fclose(s); fclose(d);
+        std::cout << "Файл скопирован.\n";
     }
 }
 
-void FileMessenger::copyFile()
+long long FileMessenger::calculateDirSize(const std::string& dirPath)
 {
-    std::string name, target;
-    std::cout << "Файл (с расширением): ";
-    std::cin >> name;
-
-    std::string sourcePath = path + name;
-    FILE* source = fopen(sourcePath.c_str(), "rb");
-    if (!source)
+    long long totalSize = 0;
+    _finddata_t info;
+    intptr_t h = _findfirst((dirPath + "\\*").c_str(), &info);
+    if (h != -1L) 
     {
-        std::cerr << "Ошибка: файл не существует или недоступен.\n";
-        return;
+        do
+        {
+            std::string n = info.name;
+            if (n != "." && n != "..") 
+            {
+                if (info.attrib & _A_SUBDIR)
+                    totalSize += calculateDirSize(dirPath + "\\" + n);
+                else
+                    totalSize += info.size;
+            }
+        } while (_findnext(h, &info) == 0);
+        _findclose(h);
     }
-
-    // Определяем расширение
-    size_t dotPos = name.find_last_of('.');
-    if (dotPos == std::string::npos)
-    {
-        std::cerr << "Ошибка: неверный формат имени файла.\n";
-        fclose(source);
-        return;
-    }
-    std::string ext = name.substr(dotPos);
-
-    std::cout << "Новое имя файла (без расширения): ";
-    std::cin >> target;
-    std::string destPath = path + target + ext;
-
-    // Копирование
-    FILE* dest = fopen(destPath.c_str(), "wb");
-    if (!dest)
-    {
-        std::cerr << "Ошибка: не удалось создать копию.\n";
-        fclose(source);
-        return;
-    }
-
-    char buffer[1024];
-    size_t bytesRead;
-    while ((bytesRead = fread(buffer, 1, sizeof(buffer), source)) > 0)
-    {
-        fwrite(buffer, 1, bytesRead, dest);
-    }
-
-    fclose(source);
-    fclose(dest);
-    std::cout << "Файл скопирован как: " << target << ext << "\n";
+    return totalSize;
 }
 
-void FileMessenger::getFileSize()
+void FileMessenger::sizeAny()
 {
     std::string name;
-    std::cout << "Файл (с расширением): ";
+    std::cout << "Имя объекта: ";
     std::cin >> name;
+    std::string fullPath = path + name;
 
-    FILE* file = fopen((path + name).c_str(), "rb");
-    if (file)
-    {
-        fseek(file, 0, SEEK_END);
-        long size = ftell(file);
-        fclose(file);
-        std::cout << "Размер: " << size << " байт\n";
-    }
+    if (isDirectory(fullPath))
+        std::cout << "Размер папки: " << calculateDirSize(fullPath) << " байт\n";
     else
     {
-        perror("Ошибка");
+        _finddata_t info;
+        intptr_t h = _findfirst(fullPath.c_str(), &info);
+        if (h != -1L)
+        {
+            std::cout << "Размер файла: " << info.size << " байт\n";
+            _findclose(h);
+        }
+        else perror("Ошибка");
     }
 }
 
-void FileMessenger::deleteFile()
+void FileMessenger::deleteAny() 
 {
     std::string name;
-    std::cout << "Файл для удаления (с расширением): ";
+    std::cout << "Удалить (имя): ";
     std::cin >> name;
+    std::string fullPath = path + name;
 
-    if (remove((path + name).c_str()) == 0)
+    if (isDirectory(fullPath))
     {
-        std::cout << "Удалено.\n";
+        // /s - подпапки, /q - без подтверждения
+        system(("rd /s /q \"" + fullPath + "\"").c_str());
+        std::cout << "Папка удалена.\n";
     }
-    else
+    else 
     {
-        perror("Ошибка");
+        if (remove(fullPath.c_str()) == 0) std::cout << "Файл удален.\n";
+        else perror("Ошибка");
     }
 }
 
-void FileMessenger::run()
+void FileMessenger::findFilesRecursive(const std::string& curr, const std::string& mask)
+{
+    _finddata_t info;
+    // 1. Ищем файлы по маске в текущей папке
+    intptr_t h = _findfirst((curr + "\\" + mask).c_str(), &info);
+    if (h != -1L)
+    {
+        do
+        {
+            if (!(info.attrib & _A_SUBDIR))
+                std::cout << "Найдено: " << curr << "\\" << info.name << "\n";
+        } while (_findnext(h, &info) == 0);
+        _findclose(h);
+    }
+    // 2. Рекурсивно идем вглубь
+    h = _findfirst((curr + "\\*").c_str(), &info);
+    if (h != -1L)
+    {
+        do 
+        {
+            std::string n = info.name;
+            if ((info.attrib & _A_SUBDIR) && n != "." && n != "..")
+                findFilesRecursive(curr + "\\" + n, mask);
+        } while (_findnext(h, &info) == 0);
+        _findclose(h);
+    }
+}
+
+void FileMessenger::searchMask() 
+{
+    std::string mask;
+    std::cout << "Введите маску (напр. *.txt): ";
+    std::cin >> mask;
+    findFilesRecursive(path, mask);
+}
+
+//void FileMessenger::showContent() 
+//{
+//    std::cout << "Содержимое папки User:\n";
+//    system(("dir \"" + path + "\" /b").c_str());
+//}
+
+void FileMessenger::printHelp() 
+{
+    std::cout << "Команды: add, rename, move, copy, size, delete, search, exit\n";
+}
+
+void FileMessenger::run() 
 {
     std::string cmd;
     printHelp();
     while (true)
     {
         std::cout << ">";
-        std::cin >> cmd;
-        if (cmd == "exit")
-        {
-            break;
-        }
-        else if (cmd == "add")
-        {
-            addFile();
-        }
-        else if (cmd == "rename")
-        {
-            renameFile();
-        }
-        else if (cmd == "copy")
-        {
-            copyFile();
-        }
-        else if (cmd == "size")
-        {
-            getFileSize();
-        }
-        else if (cmd == "delete")
-        {
-            deleteFile();
-        }
-        else if (cmd == "show_all") 
-        {
-            showUserFolderContent();
-        }
-        else if (cmd == "help")
-        {
-            printHelp();
-        }
+        if (!(std::cin >> cmd)) break;
+        if (cmd == "exit") break;
+        else if (cmd == "add") addAny();
+        else if (cmd == "rename" || cmd == "move") renameAny();
+        else if (cmd == "copy") copyAny();
+        else if (cmd == "size") sizeAny();
+        else if (cmd == "delete") deleteAny();
+        else if (cmd == "search") searchMask();
+        else printHelp();
     }
-}
-
-void FileMessenger::showUserFolderContent()
-{
-    std::cout << "Список файлов в папке User:\n";
-    std::string command = "dir \"" + path + "\" /b";
-    system(command.c_str());
 }
