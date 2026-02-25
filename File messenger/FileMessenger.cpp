@@ -1,18 +1,16 @@
 ﻿#include "FileMessenger.h"
 
-FileMessenger::FileMessenger() 
+FileMessenger::FileMessenger()
 {
     path = "C:\\Users\\user\\Рабочий стол\\User\\";
-    // Создаем базовую директорию, если её нет
     system("mkdir \"C:\\Users\\user\\Рабочий стол\\User\" 2> nul");
 }
 
-// Проверка типа объекта через _findfirst из <io.h>
 bool FileMessenger::isDirectory(const std::string& fullPath)
 {
     _finddata_t fileInfo;
     intptr_t handle = _findfirst(fullPath.c_str(), &fileInfo);
-    if (handle != -1L) 
+    if (handle != -1L)
     {
         bool res = (fileInfo.attrib & _A_SUBDIR); // Проверка бита директории
         _findclose(handle);
@@ -47,7 +45,8 @@ void FileMessenger::addAny()
             std::cout << "Файл создан.\n";
         }
     }
-    else {
+    else
+    {
         system(("mkdir \"" + path + name + "\"").c_str());
         std::cout << "Папка создана.\n";
     }
@@ -81,7 +80,7 @@ void FileMessenger::copyAny()
 
     if (isDirectory(srcPath))
     {
-        // Для папок используем системный xcopy (рекурсивно)
+        // Для папок используем системный xcopy
         std::string cmd = "xcopy \"" + srcPath + "\" \"" + dstPath + "\" /E /I /H /Y > nul";
         system(cmd.c_str());
         std::cout << "Папка скопирована.\n";
@@ -89,7 +88,11 @@ void FileMessenger::copyAny()
     else
     {
         FILE* s = fopen(srcPath.c_str(), "rb"), * d = fopen(dstPath.c_str(), "wb");
-        if (!s || !d) { std::cout << "Ошибка доступа.\n"; if (s) fclose(s); return; }
+        if (!s || !d) 
+        { 
+            std::cout << "Ошибка доступа.\n"; if (s) fclose(s);
+            return;
+        }
         char buffer[4096]; size_t n;
         while ((n = fread(buffer, 1, sizeof(buffer), s)) > 0) fwrite(buffer, 1, n, d);
         fclose(s); fclose(d);
@@ -102,12 +105,12 @@ long long FileMessenger::calculateDirSize(const std::string& dirPath)
     long long totalSize = 0;
     _finddata_t info;
     intptr_t h = _findfirst((dirPath + "\\*").c_str(), &info);
-    if (h != -1L) 
+    if (h != -1L)
     {
         do
         {
             std::string n = info.name;
-            if (n != "." && n != "..") 
+            if (n != "." && n != "..")
             {
                 if (info.attrib & _A_SUBDIR)
                     totalSize += calculateDirSize(dirPath + "\\" + n);
@@ -142,7 +145,7 @@ void FileMessenger::sizeAny()
     }
 }
 
-void FileMessenger::deleteAny() 
+void FileMessenger::deleteAny()
 {
     std::string name;
     std::cout << "Удалить (имя): ";
@@ -155,7 +158,7 @@ void FileMessenger::deleteAny()
         system(("rd /s /q \"" + fullPath + "\"").c_str());
         std::cout << "Папка удалена.\n";
     }
-    else 
+    else
     {
         if (remove(fullPath.c_str()) == 0) std::cout << "Файл удален.\n";
         else perror("Ошибка");
@@ -180,7 +183,7 @@ void FileMessenger::findFilesRecursive(const std::string& curr, const std::strin
     h = _findfirst((curr + "\\*").c_str(), &info);
     if (h != -1L)
     {
-        do 
+        do
         {
             std::string n = info.name;
             if ((info.attrib & _A_SUBDIR) && n != "." && n != "..")
@@ -190,7 +193,7 @@ void FileMessenger::findFilesRecursive(const std::string& curr, const std::strin
     }
 }
 
-void FileMessenger::searchMask() 
+void FileMessenger::searchMask()
 {
     std::string mask;
     std::cout << "Введите маску (напр. *.txt): ";
@@ -198,18 +201,35 @@ void FileMessenger::searchMask()
     findFilesRecursive(path, mask);
 }
 
-//void FileMessenger::showContent() 
-//{
-//    std::cout << "Содержимое папки User:\n";
-//    system(("dir \"" + path + "\" /b").c_str());
-//}
-
-void FileMessenger::printHelp() 
+void FileMessenger::showFilesContent(const std::string& currentPath, int level)
 {
-    std::cout << "Команды: add, rename, move, copy, size, delete, search, exit\n";
+    std::string pathToUse = currentPath.empty() ? path : currentPath;
+
+    _finddata_t info;
+    intptr_t h = _findfirst((pathToUse + "\\*").c_str(), &info);
+
+    if (h != -1L)
+    {
+        do
+        {
+            std::string name = info.name;
+            if (name != "." && name != "..")
+            {
+                std::cout << std::string(level * 2, ' ') << name << "\n";
+                if (info.attrib & _A_SUBDIR)
+                    showFilesContent(pathToUse + "\\" + name, level + 1);
+            }
+        } while (_findnext(h, &info) == 0);
+        _findclose(h);
+    }
 }
 
-void FileMessenger::run() 
+void FileMessenger::printHelp()
+{
+    std::cout << "Команды: add, rename, move, copy, size, show, delete, search, exit\n";
+}
+
+void FileMessenger::run()
 {
     std::string cmd;
     printHelp();
@@ -222,6 +242,7 @@ void FileMessenger::run()
         else if (cmd == "rename" || cmd == "move") renameAny();
         else if (cmd == "copy") copyAny();
         else if (cmd == "size") sizeAny();
+        else if (cmd == "show") showFilesContent();
         else if (cmd == "delete") deleteAny();
         else if (cmd == "search") searchMask();
         else printHelp();
