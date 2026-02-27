@@ -122,12 +122,6 @@ long long FileMessenger::calculateDirSize(const std::string& dirPath)
     }
     return totalSize;
 }
-/*
-Логика:
-    Перебирает все файлы и поддиректории в указанной директории.
-    Для файлов: добавляет размер файла (info.size) к общему размеру.
-    Для поддиректорий: рекурсивно вызывает calculateDirSize и добавляет результат к общему размеру.
-*/
 
 void FileMessenger::sizeAny()
 {
@@ -150,12 +144,6 @@ void FileMessenger::sizeAny()
         else perror("Ошибка");
     }
 }
-/*
-Логика:
-    Запрашивает имя объекта.
-    Если объект — директория, вызывает calculateDirSize и выводит результат.
-    Если объект — файл, использует _findfirst для получения размера файла (info.size).
-*/
 
 void FileMessenger::deleteAny()
 {
@@ -204,12 +192,6 @@ void FileMessenger::findFilesRecursive(const std::string& curr, const std::strin
         _findclose(h);
     }
 }
-/*
-Логика:
-    Перебирает файлы в текущей директории, сравнивая их имена с маской.
-    Для найденных файлов выводит путь.
-    Рекурсивно вызывает себя для всех поддиректорий.
-*/
 
 void FileMessenger::searchMask()
 {
@@ -241,12 +223,6 @@ void FileMessenger::showFilesContent(const std::string& currentPath, int level)
         _findclose(h);
     }
 }
-/*
-Логика:
-    Перебирает все объекты в текущей директории.
-    Выводит имена файлов и папок с отступом, пропорциональным уровню вложенности (level).
-    Рекурсивно вызывает себя для поддиректорий.
-*/
 
 void FileMessenger::printHelp()
 {
